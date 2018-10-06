@@ -6,109 +6,163 @@ contract Panda {
 	uint constant statusConfirmed = 2;
 	uint constant statusResultSubmitted = 3;
 	uint constant statusCompleted = 4;
-	uint constant minServiceFee = 10000000000000000; // 0.01 ETH
+	uint constant statusReviewStarted = 5;
+	uint constant statusReviewSubmited = 6;
+	uint constant reviewerVerdictGood = 1;
+	uint constant reviewerVerdictBaad = 2;
+	uint minServiceFee = 10000000000000000; // 0.01 ETH
+	uint minPerformerRatingWithoutReview = 8;
 
 	uint public lastTaskId;
 
 	struct Task {
 		uint status;
-		bytes taskHash;
 		address creator;
 		address performer;
-		uint value;
-		bytes resultHash;
+		address reviewer;
+		bytes32 taskHash;
+		bytes32 resultHash;
+		uint creatorRating;
+		uint performerRating;
+		uint revieverRating;
+		uint creatorPays;
+		uint performerPays;
+		uint reviewerVerdict;
+	}
+
+	struct TaskTiming {
 		uint createdAt;
 		uint confirmedAt;
 		uint resultSubmittedAt;
 		uint completedAt;
-		uint creatorRating;
-		uint performerRating;
+		uint reviewStartedAt;
+		uint reviewSubmittedAt;
 	}
 
 	mapping (uint256 => Task) public tasks;
-
-	mapping (address => bool) public whitelist;
-
+	mapping (uint256 => TaskTiming) public tasksTiming;
 
 
-	function taskCreate(bytes _taskHash, address _performer) public payable {
+
+
+	function taskCreate(bytes32 _taskHash, address _performer) public payable returns (uint256) {
 		require(msg.value > minServiceFee);
-		require(whitelist[_performer]);
 
 		lastTaskId = lastTaskId + 1;
 		tasks[lastTaskId].status = statusCreated;
 		tasks[lastTaskId].creator = msg.sender;
 		tasks[lastTaskId].taskHash = _taskHash;
 		tasks[lastTaskId].performer = _performer;
-		tasks[lastTaskId].value = msg.value;
-		tasks[lastTaskId].createdAt = block.timestamp;
+		tasks[lastTaskId].creatorPays = msg.value;
+		tasks[lastTaskId].performerPays = msg.value * 20 / 100;
+		tasksTiming[lastTaskId].createdAt = block.timestamp;
+
+		return lastTaskId;
 	}
 
 
-	function taskConfirm(uint _taskId) public {
+	function taskConfirm(uint _taskId) public payable {
 		require(tasks[_taskId].performer == msg.sender);
 		require(tasks[_taskId].status == statusCreated);
+		require(tasks[lastTaskId].performerPays == msg.value);
 
 		tasks[_taskId].status = statusConfirmed;
-		tasks[lastTaskId].confirmedAt = block.timestamp;
+		tasksTiming[lastTaskId].confirmedAt = block.timestamp;
 	}
 
 
-	function taskSubmitResult(uint _taskId, bytes _resultHash) public {
+	function taskSubmitResult(uint _taskId, bytes32 _resultHash) public {
 		require(tasks[_taskId].performer == msg.sender);
 		require(tasks[_taskId].status == statusConfirmed
 			|| tasks[_taskId].status == statusResultSubmitted);
 
 		tasks[_taskId].status = statusResultSubmitted;
 		tasks[_taskId].resultHash = _resultHash;
-		tasks[lastTaskId].resultSubmittedAt = block.timestamp;
+		tasksTiming[lastTaskId].resultSubmittedAt = block.timestamp;
 	}
 
 
-	function taskCompleteSuccessfully(uint _taskId) public {
+	function taskCompleteSuccessfullyWithoutReview(uint _taskId, uint _performerRating) public {
+		require(tasks[_taskId].creator == msg.sender);
+		require(tasks[_taskId].status == statusResultSubmitted);
+		require(_performerRating >= minPerformerRatingWithoutReview);
+		require(_performerRating <= 10);
+
+		tasks[_taskId].status = statusCompleted;
+		tasksTiming[_taskId].completedAt = block.timestamp;
+		tasks[_taskId].performerRating = _performerRating;
+		uint peroformerFee = calculatePeroformerFee(tasks[_taskId].creatorPays, tasks[_taskId].performerPays, 0);
+		tasks[_taskId].performer.transfer(peroformerFee);
+		tasks[_taskId].creator.transfer(calculateCreatorMoneyback(tasks[_taskId].creatorPays, peroformerFee, 0));
+	}
+
+
+	function taskReviewStart(uint _taskId, address _reviewer) public {
 		require(tasks[_taskId].creator == msg.sender);
 		require(tasks[_taskId].status == statusResultSubmitted);
 
-		tasks[_taskId].status = statusCompleted;
-		tasks[_taskId].completedAt = block.timestamp;
-
-		tasks[_taskId].performer.transfer(tasks[_taskId].value - minServiceFee);
+		tasks[_taskId].status = statusReviewStarted;
+		tasks[_taskId].reviewer = _reviewer;
+		tasksTiming[_taskId].reviewStartedAt = block.timestamp;
 	}
 
 
-	function taskRatePerformer(uint _taskId, uint _rating) public {
+	function taskReviewSubmit(uint _taskId, uint _reviewerVerdict, uint _performerRating) public {
+		require(tasks[_taskId].reviewer == msg.sender);
+		require(tasks[_taskId].status == statusReviewStarted);
+		require(_reviewerVerdict == reviewerVerdictGood || _reviewerVerdict == reviewerVerdictBaad);
+
+		tasks[_taskId].reviewerVerdict = _reviewerVerdict;
+		tasks[_taskId].status = statusReviewSubmited;
+		tasksTiming[_taskId].reviewSubmittedAt = block.timestamp;
+		tasks[_taskId].performerRating = _performerRating;
+	}
+
+
+	function taskCompleteSuccessfullyAfterReview(uint _taskId, uint _revieverRating) public {
 		require(tasks[_taskId].creator == msg.sender);
-		require(tasks[_taskId].status == statusCompleted);
-		require(_rating <= 10);
-		require(tasks[_taskId].performerRating == 0);
+		require(tasks[_taskId].status == statusReviewSubmited);
 
-		tasks[_taskId].performerRating = _rating;
+		tasks[_taskId].status = statusCompleted;
+		tasksTiming[_taskId].completedAt = block.timestamp;
+		tasks[_taskId].revieverRating = _revieverRating;
+		uint reviewerFee = calculateReviewerFee(tasks[_taskId].creatorPays);
+		tasks[_taskId].reviewer.transfer(reviewerFee);
+		uint peroformerFee = calculatePeroformerFee(tasks[_taskId].creatorPays, tasks[_taskId].performerPays, reviewerFee);
+		tasks[_taskId].performer.transfer(peroformerFee);
 	}
 
 
-	function taskRateCreator(uint _taskId, uint _rating) public {
+	// TODO taskComplete with moneyback with performer agreement or service approval
+
+
+	function taskRateCreator(uint _taskId, uint _creatorRating) public {
 		require(tasks[_taskId].performer == msg.sender);
 		require(tasks[_taskId].status == statusCompleted);
-		require(_rating <= 10);
+		require(_creatorRating <= 10);
 		require(tasks[_taskId].creatorRating == 0);
 
-		tasks[_taskId].creatorRating = _rating;
+		tasks[_taskId].creatorRating = _creatorRating;
 	}
+
+	function calculateReviewerFee(uint _creatorPays) pure public returns (uint256) {
+		return _creatorPays * 20 / 100;
+	}
+
+	function calculatePeroformerFee(uint _creatorPays, uint _performerPays, uint _reviewerFee) view public returns (uint256) {
+		return _creatorPays - _reviewerFee  + _performerPays - minServiceFee;
+	}
+
+	function calculateCreatorMoneyback(uint _creatorPays, uint _performerFee, uint _reviewerFee) view public returns (uint256) {
+		return _creatorPays - _reviewerFee - _performerFee - minServiceFee;
+	}
+
 
 
 	constructor() public {
-		ownerAddress = msg.sender;
+		contractOwner = msg.sender;
 	}
 
-	address public ownerAddress;
-
-	modifier onlyOwner() {
-		require(msg.sender == ownerAddress);
-		_;
-	}
-
-	function setWhitelist(address _address, bool _status) external onlyOwner {
-		whitelist[_address] = _status;
-	}
+	address public contractOwner;
 
 }
