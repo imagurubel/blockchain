@@ -1,0 +1,131 @@
+.App {
+	height: 100%;
+	background-color: black;
+	background: url(./img/back_black.jpg);
+	background-size: cover;
+}
+
+.main-container {
+	height: 100%;
+}
+
+.header-container {
+	height: 15%;
+	border-bottom: 1px solid white;
+}
+
+.header { 
+	width: 100%;
+}
+.brand {
+	cursor: pointer;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 27px !important;
+	line-height: 32px !important;
+	font-weight: 700;
+	color: white;
+}
+.brand::before{
+	content: url(./img/logo.png);
+	margin: 0px 10px;
+}
+.brand span {
+	margin: 0px 10px;
+	color: #F6E444;
+}
+.navbar-nav {
+	flex-direction: row !important;
+}
+.navbar-nav .nav-item {
+	margin: 0 10px;
+}
+.navbar-nav .nav-item a {
+	color: white;
+}
+
+.info-container {
+	height: 70vh;
+}
+
+.info-container.row .col{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.info-container h2 {
+	text-align: center;
+	color: #FFFFFF;
+    line-height: 38px;
+    text-align: center;
+    font-size: 32px;
+    font-family: montserrat, sans-serif;
+    font-weight: 500;
+}
+.info-container p {
+	color: #FFFFFF;
+    line-height: 22px;
+    text-align: center;
+    font-size: 18px;
+    font-family: open-sans, sans-serif;
+    font-weight: 300;
+}
+.faq-btn {
+	background: transparent;
+	background: -webkit-gradient(linear, left center, right center, from(rgba(10,196,204,0.85)),color-stop(96%, rgba(124,31,184,0.9)));
+    background: -webkit-linear-gradient(left,rgba(10,196,204,0.85) ,rgba(124,31,184,0.9) 96%);
+	background: linear-gradient(to right,rgba(10,196,204,0.85) ,rgba(124,31,184,0.9) 96%);
+	border:none;
+    border-radius: 7px;
+	padding-bottom: 5px;
+	text-align: center;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 22px;
+    letter-spacing: 1px;
+    font-family: open-sans, sans-serif;
+    font-weight: 600;
+}
+
+.games-container .col{
+	color: white;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	
+}
+.games-container .col p {
+	color: #FFFFFF;
+    line-height: 20px;
+    text-align: center;
+    font-size: 13px;
+    font-family: open-sans, sans-serif;
+    font-weight: 300;
+}
+.games-container .play-btn {
+	background: -webkit-gradient(linear, left center, right center, from(rgba(113,28,170,0.85)),color-stop(96%, rgba(43,223,202,0.9)));
+    background: -webkit-linear-gradient(left,rgba(113,28,170,0.85) ,rgba(43,223,202,0.9) 1107px);
+	background: linear-gradient(to right,rgba(113,28,170,0.85) ,rgba(43,223,202,0.9) 1107px);
+	border:none;
+    border-radius: 7px;
+	padding-bottom: 5px;
+	text-align: center;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 22px;
+    letter-spacing: 1px;
+    font-family: open-sans, sans-serif;
+    font-weight: 600;
+}
+.lottery {
+	height: 95px;
+	background-image: url(./img/lottery.png);
+	background-size: contain;
+}
+
+.unavaliable {
+	opacity: 0.3;
+}
