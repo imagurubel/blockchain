@@ -1,0 +1,558 @@
+[
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "tasksTiming",
+      "outputs": [
+        {
+          "name": "duration",
+          "type": "uint256"
+        },
+        {
+          "name": "createdAt",
+          "type": "uint256"
+        },
+        {
+          "name": "confirmedAt",
+          "type": "uint256"
+        },
+        {
+          "name": "resultSubmittedAt",
+          "type": "uint256"
+        },
+        {
+          "name": "completedAt",
+          "type": "uint256"
+        },
+        {
+          "name": "reviewStartedAt",
+          "type": "uint256"
+        },
+        {
+          "name": "reviewSubmittedAt",
+          "type": "uint256"
+        },
+        {
+          "name": "arbitrageSubmittedAt",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "lastTaskId",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "tasks",
+      "outputs": [
+        {
+          "name": "status",
+          "type": "uint256"
+        },
+        {
+          "name": "creator",
+          "type": "address"
+        },
+        {
+          "name": "performer",
+          "type": "address"
+        },
+        {
+          "name": "reviewer",
+          "type": "address"
+        },
+        {
+          "name": "taskHash",
+          "type": "bytes32"
+        },
+        {
+          "name": "resultHash",
+          "type": "bytes32"
+        },
+        {
+          "name": "creatorRatingByPerformer",
+          "type": "uint256"
+        },
+        {
+          "name": "creatorRatingByReviewer",
+          "type": "uint256"
+        },
+        {
+          "name": "performerRating",
+          "type": "uint256"
+        },
+        {
+          "name": "reviewerRating",
+          "type": "uint256"
+        },
+        {
+          "name": "creatorPays",
+          "type": "uint256"
+        },
+        {
+          "name": "performerPays",
+          "type": "uint256"
+        },
+        {
+          "name": "reviewerVerdict",
+          "type": "uint256"
+        },
+        {
+          "name": "arbitrageVerdict",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "contractOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskHash",
+          "type": "bytes32"
+        },
+        {
+          "name": "_performer",
+          "type": "address"
+        },
+        {
+          "name": "_duration",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskCreate",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskCancelBeforeConfirmed",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskConfirm",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_performerRating",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskCompleteUnsuccessfullyWithoutResultSubmittedAfterTimeout",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_resultHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "taskSubmitResult",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_performerRating",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskCompleteSuccessfullyWithoutReview",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskCompleteSuccessfullyByPerformerAfterTimeout",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_reviewer",
+          "type": "address"
+        }
+      ],
+      "name": "taskReviewStart",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_reviewerVerdict",
+          "type": "uint256"
+        },
+        {
+          "name": "_performerRating",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskReviewSubmit",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_reviewerRating",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskCompleteSuccessfullyAfterReview",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskCompleteSuccessfullyAfterReviewByPerformerAfterTimeout",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_reviewerRating",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskCompleteUnsuccessfullyAfterReviewWithoutArbitrageAfterTimeout",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskRequestArbitrage",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_arbitrageVerdict",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskArbitrageVerdict",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_reviewerRating",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskCompleteUnsuccessfullyAfterArbitrage",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_reviewerRating",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskCompleteSuccessfullyAfterArbitrageByCreator",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskCompleteSuccessfullyAfterArbitrageByPerformerAfterTimeout",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_creatorRatingByPerformer",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskRateCreatorByPerformer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_taskId",
+          "type": "uint256"
+        },
+        {
+          "name": "_creatorRatingByReviewer",
+          "type": "uint256"
+        }
+      ],
+      "name": "taskRateCreatorByReviewer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_creatorPays",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateReviewerFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_creatorPays",
+          "type": "uint256"
+        },
+        {
+          "name": "_performerPays",
+          "type": "uint256"
+        },
+        {
+          "name": "_reviewerFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculatePeroformerFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_creatorPays",
+          "type": "uint256"
+        },
+        {
+          "name": "_performerFee",
+          "type": "uint256"
+        },
+        {
+          "name": "_reviewerFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateCreatorMoneyback",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
