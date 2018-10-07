@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="blh-n8-Eih">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="geometria_normal.otf">
+            <string>Geometria</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Doors View Controller-->
+        <scene sceneID="fzH-Xo-Uth">
+            <objects>
+                <viewController id="blh-n8-Eih" customClass="DoorsViewController" customModule="DoorChain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9yG-9B-Mul">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7BH-ML-G5W">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DoorsTableViewCell" rowHeight="57" id="H2S-l0-mYx" customClass="DoorsTableViewCell" customModule="DoorChain" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H2S-l0-mYx" id="ONP-hu-1x2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPx-MA-pcO">
+                                                    <rect key="frame" x="20" y="20" width="46" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Geometria" family="Geometria" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siz-td-d62">
+                                                    <rect key="frame" x="310" y="13.5" width="45" height="30"/>
+                                                    <state key="normal" title="Delete"/>
+                                                    <connections>
+                                                        <action selector="actioDelete:" destination="H2S-l0-mYx" eventType="touchUpInside" id="gZg-XC-F4t"/>
+                                                    </connections>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKE-af-c8Y">
+                                                    <rect key="frame" x="272" y="13.5" width="30" height="30"/>
+                                                    <state key="normal" title="Edit"/>
+                                                    <connections>
+                                                        <action selector="actionEdit:" destination="H2S-l0-mYx" eventType="touchUpInside" id="fub-yr-PzP"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bPx-MA-pcO" firstAttribute="leading" secondItem="ONP-hu-1x2" secondAttribute="leading" constant="20" id="C1C-Et-yPe"/>
+                                                <constraint firstItem="WKE-af-c8Y" firstAttribute="centerY" secondItem="ONP-hu-1x2" secondAttribute="centerY" id="ERW-f3-fhU"/>
+                                                <constraint firstItem="siz-td-d62" firstAttribute="leading" secondItem="WKE-af-c8Y" secondAttribute="trailing" constant="8" id="LWQ-TL-K3x"/>
+                                                <constraint firstAttribute="trailing" secondItem="siz-td-d62" secondAttribute="trailing" constant="20" id="hHq-Bc-1cr"/>
+                                                <constraint firstItem="bPx-MA-pcO" firstAttribute="centerY" secondItem="ONP-hu-1x2" secondAttribute="centerY" id="qWr-u4-CM6"/>
+                                                <constraint firstItem="siz-td-d62" firstAttribute="centerY" secondItem="ONP-hu-1x2" secondAttribute="centerY" id="wGJ-U6-anG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deleteButton" destination="siz-td-d62" id="aSP-Wl-DpF"/>
+                                            <outlet property="editButton" destination="WKE-af-c8Y" id="tbo-lC-Lqw"/>
+                                            <outlet property="nameLabe" destination="bPx-MA-pcO" id="Ra0-KP-A0E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7BH-ML-G5W" firstAttribute="top" secondItem="teN-65-59n" secondAttribute="top" id="736-dV-iqm"/>
+                            <constraint firstItem="teN-65-59n" firstAttribute="trailing" secondItem="7BH-ML-G5W" secondAttribute="trailing" id="9CY-lU-IEZ"/>
+                            <constraint firstItem="teN-65-59n" firstAttribute="bottom" secondItem="7BH-ML-G5W" secondAttribute="bottom" id="SDL-Zd-dCQ"/>
+                            <constraint firstItem="7BH-ML-G5W" firstAttribute="leading" secondItem="teN-65-59n" secondAttribute="leading" id="ZpT-Lw-14O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="teN-65-59n"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="7BH-ML-G5W" id="CIb-0S-wd3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lL4-S5-V1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="95.802098950524751"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,21 @@
+platform :ios, '9.0'
+use_frameworks!
+
+def swinject_pods
+    pod 'Swinject'
+end
+
+def helpers_pods
+    pod 'SnapKit', '~> 4.0.0'
+    pod 'R.swift'
+    pod 'Moya'
+    pod 'SwiftyJSON'
+    pod 'ECHO', :git => 'https://gitlab.pixelplex.by/646_echo_mobile_library/ios.git'
+end
+
+target 'DoorChain' do
+        
+    swinject_pods
+    helpers_pods
+    
+end

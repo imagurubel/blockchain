@@ -1,0 +1,1225 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06B12EF9E56E0ED89819E13A /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36E0AF7049ACC1DA7B3E0B /* RegistrationRouter.swift */; };
+		0C2258DC2728CAA290CBF0A6 /* DoorsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639366F19CDF252BBB938E63 /* DoorsAssembler.swift */; };
+		1EDD03FC1CAFED42130DDDBC /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0077559F8DCD7403747F83 /* RegistrationPresenter.swift */; };
+		3CBA647FB66D54F3FB0B94BA /* DoorsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3CAF968B26D14E61B3672B /* DoorsConfigurator.swift */; };
+		42A0E51A7228374483D8E3AA /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28F5B72CFA0D64808C1C3F /* LoginPresenter.swift */; };
+		463B456709A2E73EF3C4DC9D /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7DA207FF20A68DA45AE2CA /* LoginRouter.swift */; };
+		526B8DEDBBE4B415CCB3597F /* DoorsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218807B42EB1CE4743B8BD3D /* DoorsPresenter.swift */; };
+		5518265CAB0E2520F2ECD18D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D64FFA9005FF2D60E397A9 /* LoginViewController.swift */; };
+		6C2D681C48EEF9060DCFAC48 /* RegistrationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484D1291B75D9009E7DA9084 /* RegistrationConfigurator.swift */; };
+		79BE3382ADA3470C05EEB31A /* DoorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C29CCAF28692B2CFDE588F /* DoorsViewController.swift */; };
+		824071586828B9BA4148CBFA /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF38DA44006340433E58F60A /* RegistrationViewController.swift */; };
+		838F1B41BDA5AEA06AD5A613 /* DoorsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6252C64722C36202E74B40D /* DoorsRouter.swift */; };
+		87684323322436EB8E6ADDAD /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874E8F4A841C44EB0034C2F7 /* LoginConfigurator.swift */; };
+		91E55BAF0E9DA986F13F0F6E /* DoorsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0914AD9C0CB945122E65F374 /* DoorsProtocols.swift */; };
+		9D20E9A1109B2E51A719B9CF /* RegistrationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8530056BF0591DE4B81E786 /* RegistrationAssembler.swift */; };
+		ACD1C23A645C0C12E390CAD9 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A9C66552A22F667BB4E4C /* LoginInteractor.swift */; };
+		B10CCC6E52D5E2ACAA7255D2 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE015A898B0F0F64A51BF3B0 /* LoginAssembler.swift */; };
+		C272DE6EAF2CF2C1531357CE /* DoorsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9FE78BAFEEADA3B716F6FB /* DoorsInteractor.swift */; };
+		D0912CFD2167EB4300ABAB7F /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0912CFC2167EB4300ABAB7F /* Auth.storyboard */; };
+		D0912D032167F21100ABAB7F /* CustomTextFieldWithImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0912CFF2167F21000ABAB7F /* CustomTextFieldWithImage.xib */; };
+		D0912D042167F21100ABAB7F /* CustomTextFieldWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D002167F21000ABAB7F /* CustomTextFieldWithImage.swift */; };
+		D0912D052167F21100ABAB7F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D012167F21100ABAB7F /* CustomTextField.swift */; };
+		D0912D062167F21100ABAB7F /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0912D022167F21100ABAB7F /* CustomTextField.xib */; };
+		D0912D082167F36800ABAB7F /* ErrorableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D072167F36800ABAB7F /* ErrorableView.swift */; };
+		D0912D0A2167F41600ABAB7F /* DoorChain.clr in Resources */ = {isa = PBXBuildFile; fileRef = D0912D092167F41600ABAB7F /* DoorChain.clr */; };
+		D0912D182167F56E00ABAB7F /* geometria_bold_italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D102167F4F200ABAB7F /* geometria_bold_italic.otf */; };
+		D0912D192167F56E00ABAB7F /* geometria_bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D0C2167F4F200ABAB7F /* geometria_bold.otf */; };
+		D0912D1A2167F56E00ABAB7F /* geometria_exta_black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D0D2167F4F200ABAB7F /* geometria_exta_black.otf */; };
+		D0912D1B2167F56E00ABAB7F /* geometria_extra_black_italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D112167F4F200ABAB7F /* geometria_extra_black_italic.otf */; };
+		D0912D1C2167F56E00ABAB7F /* geometria_extra_light_italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D0E2167F4F200ABAB7F /* geometria_extra_light_italic.otf */; };
+		D0912D1D2167F56E00ABAB7F /* geometria_extra_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D132167F4F300ABAB7F /* geometria_extra_light.otf */; };
+		D0912D1E2167F56E00ABAB7F /* geometria_heavy_italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D0F2167F4F200ABAB7F /* geometria_heavy_italic.otf */; };
+		D0912D1F2167F56E00ABAB7F /* geometria_heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D152167F4F300ABAB7F /* geometria_heavy.otf */; };
+		D0912D202167F56E00ABAB7F /* geometria_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D142167F4F300ABAB7F /* geometria_light.otf */; };
+		D0912D212167F56E00ABAB7F /* geometria_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D122167F4F300ABAB7F /* geometria_medium.otf */; };
+		D0912D222167F56E00ABAB7F /* geometria_normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D162167F4F300ABAB7F /* geometria_normal.otf */; };
+		D0912D232167F56E00ABAB7F /* myriad_pro_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0912D172167F4F300ABAB7F /* myriad_pro_regular.otf */; };
+		D0912D29216890B300ABAB7F /* AuthFacadeServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D26216890B300ABAB7F /* AuthFacadeServiceImp.swift */; };
+		D0912D2A216890B300ABAB7F /* AuthFacadeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D28216890B300ABAB7F /* AuthFacadeService.swift */; };
+		D0912D3A216890F400ABAB7F /* SharedSorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D2C216890F300ABAB7F /* SharedSorage.swift */; };
+		D0912D3B216890F400ABAB7F /* ECHOKeysCoreComponentImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D2D216890F300ABAB7F /* ECHOKeysCoreComponentImp.swift */; };
+		D0912D3D216890F400ABAB7F /* FaucetNetworkImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D31216890F300ABAB7F /* FaucetNetworkImp.swift */; };
+		D0912D3E216890F400ABAB7F /* StorageCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D32216890F300ABAB7F /* StorageCore.swift */; };
+		D0912D3F216890F400ABAB7F /* NetworkProviderImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D34216890F300ABAB7F /* NetworkProviderImp.swift */; };
+		D0912D40216890F400ABAB7F /* FaucetNetworkCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D35216890F300ABAB7F /* FaucetNetworkCore.swift */; };
+		D0912D41216890F400ABAB7F /* ECHOKeysCoreComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D37216890F400ABAB7F /* ECHOKeysCoreComponent.swift */; };
+		D0912D43216890F400ABAB7F /* KeyValueSorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D39216890F400ABAB7F /* KeyValueSorage.swift */; };
+		D0912D46216891DC00ABAB7F /* Clearable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D45216891DC00ABAB7F /* Clearable.swift */; };
+		D0912D4A216891F100ABAB7F /* DoorsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D48216891F100ABAB7F /* DoorsError.swift */; };
+		D0912D4B216891F100ABAB7F /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D49216891F100ABAB7F /* ErrorWrapper.swift */; };
+		D0912D4E2168A15200ABAB7F /* LoaderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D4D2168A15200ABAB7F /* LoaderExtension.swift */; };
+		D0912D502168C85800ABAB7F /* ContractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D4F2168C85800ABAB7F /* ContractService.swift */; };
+		D0912D522168CB0800ABAB7F /* ContractSerivceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D512168CB0800ABAB7F /* ContractSerivceImp.swift */; };
+		D0912D5421694C0700ABAB7F /* Doors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0912D5321694C0600ABAB7F /* Doors.storyboard */; };
+		D0912D562169593E00ABAB7F /* DoorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0912D552169593E00ABAB7F /* DoorsTableViewCell.swift */; };
+		D0B727BF2167E41C00994782 /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727882167E41C00994782 /* ServicesAssembly.swift */; };
+		D0B727C02167E41C00994782 /* CoreComponentAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727892167E41C00994782 /* CoreComponentAssembly.swift */; };
+		D0B727C12167E41C00994782 /* ProxyAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7278A2167E41C00994782 /* ProxyAssembly.swift */; };
+		D0B727C22167E41C00994782 /* BusinessLayerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7278B2167E41C00994782 /* BusinessLayerAssembly.swift */; };
+		D0B727C32167E41C00994782 /* ConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7278E2167E41C00994782 /* ConfiguratorProtocol.swift */; };
+		D0B727C42167E41C00994782 /* ApplicationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7278F2167E41C00994782 /* ApplicationConfigurator.swift */; };
+		D0B727C52167E41C00994782 /* AppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727902167E41C00994782 /* AppearanceConfigurator.swift */; };
+		D0B727C62167E41C00994782 /* ApplicationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727922167E41C00994782 /* ApplicationAssembler.swift */; };
+		D0B727C72167E41C00994782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727932167E41C00994782 /* AppDelegate.swift */; };
+		D0B727C82167E41C00994782 /* ModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727962167E41C00994782 /* ModuleAssembly.swift */; };
+		D0B727C92167E41C00994782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B727972167E41C00994782 /* LaunchScreen.storyboard */; };
+		D0B727CA2167E41C00994782 /* RootAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727A42167E41C00994782 /* RootAssembler.swift */; };
+		D0B727CB2167E41C00994782 /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727A62167E41C00994782 /* RootPresenter.swift */; };
+		D0B727CC2167E41C00994782 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B727A72167E41C00994782 /* Root.storyboard */; };
+		D0B727CD2167E41C00994782 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727A92167E41C00994782 /* RootViewController.swift */; };
+		D0B727CE2167E41C00994782 /* RootConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727AB2167E41C00994782 /* RootConfigurator.swift */; };
+		D0B727CF2167E41C00994782 /* RootProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727AD2167E41C00994782 /* RootProtocols.swift */; };
+		D0B727D02167E41C00994782 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727AF2167E41C00994782 /* RootInteractor.swift */; };
+		D0B727D12167E41C00994782 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727B12167E41C00994782 /* RootRouter.swift */; };
+		D0B727D22167E41C00994782 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0B727B32167E41C00994782 /* Localization.strings */; };
+		D0B727D32167E41C00994782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B727B52167E41C00994782 /* Assets.xcassets */; };
+		D0B727D42167E41C00994782 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727B62167E41C00994782 /* R.generated.swift */; };
+		D0B727D62167E41C00994782 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727B92167E41C00994782 /* Constants.swift */; };
+		D0B727D72167E41C00994782 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B727BB2167E41C00994782 /* Presentable.swift */; };
+		D41535A9B834E44058886E0A /* RegistrationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D558C0826D20E2CE6DC224 /* RegistrationProtocols.swift */; };
+		DBE0FA80150705A8820C71CA /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86A8C62C054E3ECF607B50 /* LoginProtocols.swift */; };
+		EFC7509CD7B2F57BFB016AB5 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0B1D4E7147CC5CCA1DEDF3 /* RegistrationInteractor.swift */; };
+		F9EA7FCBEAD761A0455D2214 /* Pods_DoorChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A75A13EF430D853DFB4C6A2 /* Pods_DoorChain.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0914AD9C0CB945122E65F374 /* DoorsProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DoorsProtocols.swift; sourceTree = "<group>"; };
+		0A3CAF968B26D14E61B3672B /* DoorsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DoorsConfigurator.swift; sourceTree = "<group>"; };
+		0B7A9C66552A22F667BB4E4C /* LoginInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		20C29CCAF28692B2CFDE588F /* DoorsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DoorsViewController.swift; sourceTree = "<group>"; };
+		218807B42EB1CE4743B8BD3D /* DoorsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DoorsPresenter.swift; sourceTree = "<group>"; };
+		484D1291B75D9009E7DA9084 /* RegistrationConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationConfigurator.swift; sourceTree = "<group>"; };
+		4A75A13EF430D853DFB4C6A2 /* Pods_DoorChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoorChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		639366F19CDF252BBB938E63 /* DoorsAssembler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DoorsAssembler.swift; sourceTree = "<group>"; };
+		6A9FE78BAFEEADA3B716F6FB /* DoorsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DoorsInteractor.swift; sourceTree = "<group>"; };
+		6B28F5B72CFA0D64808C1C3F /* LoginPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		874E8F4A841C44EB0034C2F7 /* LoginConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
+		AB0077559F8DCD7403747F83 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		ABBD4AA95ED1DBE9B9B59701 /* Pods-DoorChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoorChain/Pods-DoorChain.debug.xcconfig"; sourceTree = "<group>"; };
+		B3D1C20B2137F412009018AE /* DoorChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB36E0AF7049ACC1DA7B3E0B /* RegistrationRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		BE0B1D4E7147CC5CCA1DEDF3 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
+		BF38DA44006340433E58F60A /* RegistrationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		CE7DA207FF20A68DA45AE2CA /* LoginRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		D0912CFC2167EB4300ABAB7F /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		D0912CFF2167F21000ABAB7F /* CustomTextFieldWithImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTextFieldWithImage.xib; sourceTree = "<group>"; };
+		D0912D002167F21000ABAB7F /* CustomTextFieldWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldWithImage.swift; sourceTree = "<group>"; };
+		D0912D012167F21100ABAB7F /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		D0912D022167F21100ABAB7F /* CustomTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
+		D0912D072167F36800ABAB7F /* ErrorableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorableView.swift; sourceTree = "<group>"; };
+		D0912D092167F41600ABAB7F /* DoorChain.clr */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = DoorChain.clr; sourceTree = "<group>"; };
+		D0912D0C2167F4F200ABAB7F /* geometria_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = geometria_bold.otf; sourceTree = "<group>"; };
+		D0912D0D2167F4F200ABAB7F /* geometria_exta_black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = geometria_exta_black.otf; sourceTree = "<group>"; };
+		D0912D0E2167F4F200ABAB7F /* geometria_extra_light_italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = geometria_extra_light_italic.otf; sourceTree = "<group>"; };
+		D0912D0F2167F4F200ABAB7F /* geometria_heavy_italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = geometria_heavy_italic.otf; sourceTree = "<group>"; };
+		D0912D102167F4F200ABAB7F /* geometria_bold_italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = geometria_bold_italic.otf; sourceTree = "<group>"; };
+		D0912D112167F4F200ABAB7F /* geometria_extra_black_italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = geometria_extra_black_italic.otf; sourceTree = "<group>"; };
+		D0912D122167F4F300ABAB7F /* geometria_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = geometria_medium.otf; sourceTree = "<group>"; };
+		D0912D132167F4F300ABAB7F /* geometria_extra_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = geometria_extra_light.otf; sourceTree = "<group>"; };
+		D0912D142167F4F300ABAB7F /* geometria_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = geometria_light.otf; sourceTree = "<group>"; };
+		D0912D152167F4F300ABAB7F /* geometria_heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = geometria_heavy.otf; sourceTree = "<group>"; };
+		D0912D162167F4F300ABAB7F /* geometria_normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = geometria_normal.otf; sourceTree = "<group>"; };
+		D0912D172167F4F300ABAB7F /* myriad_pro_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = myriad_pro_regular.otf; sourceTree = "<group>"; };
+		D0912D26216890B300ABAB7F /* AuthFacadeServiceImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthFacadeServiceImp.swift; sourceTree = "<group>"; };
+		D0912D28216890B300ABAB7F /* AuthFacadeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthFacadeService.swift; sourceTree = "<group>"; };
+		D0912D2C216890F300ABAB7F /* SharedSorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedSorage.swift; sourceTree = "<group>"; };
+		D0912D2D216890F300ABAB7F /* ECHOKeysCoreComponentImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECHOKeysCoreComponentImp.swift; sourceTree = "<group>"; };
+		D0912D31216890F300ABAB7F /* FaucetNetworkImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaucetNetworkImp.swift; sourceTree = "<group>"; };
+		D0912D32216890F300ABAB7F /* StorageCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageCore.swift; sourceTree = "<group>"; };
+		D0912D34216890F300ABAB7F /* NetworkProviderImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProviderImp.swift; sourceTree = "<group>"; };
+		D0912D35216890F300ABAB7F /* FaucetNetworkCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaucetNetworkCore.swift; sourceTree = "<group>"; };
+		D0912D37216890F400ABAB7F /* ECHOKeysCoreComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECHOKeysCoreComponent.swift; sourceTree = "<group>"; };
+		D0912D39216890F400ABAB7F /* KeyValueSorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueSorage.swift; sourceTree = "<group>"; };
+		D0912D45216891DC00ABAB7F /* Clearable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clearable.swift; sourceTree = "<group>"; };
+		D0912D48216891F100ABAB7F /* DoorsError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorsError.swift; sourceTree = "<group>"; };
+		D0912D49216891F100ABAB7F /* ErrorWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
+		D0912D4D2168A15200ABAB7F /* LoaderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderExtension.swift; sourceTree = "<group>"; };
+		D0912D4F2168C85800ABAB7F /* ContractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractService.swift; sourceTree = "<group>"; };
+		D0912D512168CB0800ABAB7F /* ContractSerivceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractSerivceImp.swift; sourceTree = "<group>"; };
+		D0912D5321694C0600ABAB7F /* Doors.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Doors.storyboard; sourceTree = "<group>"; };
+		D0912D552169593E00ABAB7F /* DoorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsTableViewCell.swift; sourceTree = "<group>"; };
+		D0B727882167E41C00994782 /* ServicesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
+		D0B727892167E41C00994782 /* CoreComponentAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreComponentAssembly.swift; sourceTree = "<group>"; };
+		D0B7278A2167E41C00994782 /* ProxyAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyAssembly.swift; sourceTree = "<group>"; };
+		D0B7278B2167E41C00994782 /* BusinessLayerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessLayerAssembly.swift; sourceTree = "<group>"; };
+		D0B7278E2167E41C00994782 /* ConfiguratorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguratorProtocol.swift; sourceTree = "<group>"; };
+		D0B7278F2167E41C00994782 /* ApplicationConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfigurator.swift; sourceTree = "<group>"; };
+		D0B727902167E41C00994782 /* AppearanceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurator.swift; sourceTree = "<group>"; };
+		D0B727922167E41C00994782 /* ApplicationAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembler.swift; sourceTree = "<group>"; };
+		D0B727932167E41C00994782 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0B727962167E41C00994782 /* ModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleAssembly.swift; sourceTree = "<group>"; };
+		D0B727982167E41C00994782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0B727A42167E41C00994782 /* RootAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootAssembler.swift; sourceTree = "<group>"; };
+		D0B727A62167E41C00994782 /* RootPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
+		D0B727A72167E41C00994782 /* Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
+		D0B727A92167E41C00994782 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		D0B727AB2167E41C00994782 /* RootConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootConfigurator.swift; sourceTree = "<group>"; };
+		D0B727AD2167E41C00994782 /* RootProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootProtocols.swift; sourceTree = "<group>"; };
+		D0B727AF2167E41C00994782 /* RootInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		D0B727B12167E41C00994782 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		D0B727B32167E41C00994782 /* Localization.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
+		D0B727B52167E41C00994782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0B727B62167E41C00994782 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		D0B727B72167E41C00994782 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0B727B92167E41C00994782 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D0B727BB2167E41C00994782 /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		D23C5AE6C3E3628E67B73B24 /* Pods-DoorChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoorChain/Pods-DoorChain.release.xcconfig"; sourceTree = "<group>"; };
+		DB86A8C62C054E3ECF607B50 /* LoginProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		DE015A898B0F0F64A51BF3B0 /* LoginAssembler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
+		E6252C64722C36202E74B40D /* DoorsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DoorsRouter.swift; sourceTree = "<group>"; };
+		F1D64FFA9005FF2D60E397A9 /* LoginViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F8530056BF0591DE4B81E786 /* RegistrationAssembler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationAssembler.swift; sourceTree = "<group>"; };
+		F9D558C0826D20E2CE6DC224 /* RegistrationProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationProtocols.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3D1C2082137F412009018AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9EA7FCBEAD761A0455D2214 /* Pods_DoorChain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06DE64D2D5DF35E05C20C44D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0B7A9C66552A22F667BB4E4C /* LoginInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		085E48373E27C393F5AB39E7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F9D558C0826D20E2CE6DC224 /* RegistrationProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0B68331C0643C0010AE21F14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A75A13EF430D853DFB4C6A2 /* Pods_DoorChain.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1086173A671825FD35DE74E0 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				874E8F4A841C44EB0034C2F7 /* LoginConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		17ECBC5D661D030B42CD62F9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				218807B42EB1CE4743B8BD3D /* DoorsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2307F664830D1B6C8B6388D1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CE7DA207FF20A68DA45AE2CA /* LoginRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		247F7ACA16ACF45E1C56485E /* Doors */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D5321694C0600ABAB7F /* Doors.storyboard */,
+				36CD3ABA6A9CB35224DFE644 /* View */,
+				17ECBC5D661D030B42CD62F9 /* Presenter */,
+				8E41279E2892BA2BE08FB10C /* Interactor */,
+				2D98D30F741F179D7A069F40 /* Router */,
+				507E38EC85FC37C487623DFC /* Configurator */,
+				3F4648D45FC632C71E9360F0 /* Assembly */,
+				3B0EE9D079DF1CB94F6B2813 /* Protocols */,
+			);
+			path = Doors;
+			sourceTree = "<group>";
+		};
+		2D98D30F741F179D7A069F40 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E6252C64722C36202E74B40D /* DoorsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		36CD3ABA6A9CB35224DFE644 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20C29CCAF28692B2CFDE588F /* DoorsViewController.swift */,
+				D0912D552169593E00ABAB7F /* DoorsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B0EE9D079DF1CB94F6B2813 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0914AD9C0CB945122E65F374 /* DoorsProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3B2FB58FED76648A8B83151E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6B28F5B72CFA0D64808C1C3F /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3F4648D45FC632C71E9360F0 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				639366F19CDF252BBB938E63 /* DoorsAssembler.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		507E38EC85FC37C487623DFC /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				0A3CAF968B26D14E61B3672B /* DoorsConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		6BC8DA2739181193CFAC6435 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BE0B1D4E7147CC5CCA1DEDF3 /* RegistrationInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		826E7D66E0F22C759AAAAFFC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AB6F277CD86143EC4FF91432 /* View */,
+				3B2FB58FED76648A8B83151E /* Presenter */,
+				06DE64D2D5DF35E05C20C44D /* Interactor */,
+				2307F664830D1B6C8B6388D1 /* Router */,
+				1086173A671825FD35DE74E0 /* Configurator */,
+				CF05180AB53A368C34B6A2D4 /* Assembly */,
+				95B2D164B48E767C663883FD /* Protocols */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		86A98A3EE9647352A80C8CD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF38DA44006340433E58F60A /* RegistrationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8E41279E2892BA2BE08FB10C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				6A9FE78BAFEEADA3B716F6FB /* DoorsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8E9956D5F410AE338110413C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB0077559F8DCD7403747F83 /* RegistrationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		95B2D164B48E767C663883FD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DB86A8C62C054E3ECF607B50 /* LoginProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AB6F277CD86143EC4FF91432 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1D64FFA9005FF2D60E397A9 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3D1C2022137F412009018AE = {
+			isa = PBXGroup;
+			children = (
+				D0B7277C2167E41C00994782 /* DoorChain */,
+				B3D1C20C2137F412009018AE /* Products */,
+				D98778A250A9AAFB04380903 /* Pods */,
+				0B68331C0643C0010AE21F14 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B3D1C20C2137F412009018AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3D1C20B2137F412009018AE /* DoorChain.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C99E6694B720BA1BCC2E3A06 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F8530056BF0591DE4B81E786 /* RegistrationAssembler.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		CF05180AB53A368C34B6A2D4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				DE015A898B0F0F64A51BF3B0 /* LoginAssembler.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		D0912CFB2167EB2F00ABAB7F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D0912CFC2167EB4300ABAB7F /* Auth.storyboard */,
+				826E7D66E0F22C759AAAAFFC /* Login */,
+				F0A75C1A3D23D251C9E38CBD /* Registration */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		D0912CFE2167F1E700ABAB7F /* SharedViews */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D072167F36800ABAB7F /* ErrorableView.swift */,
+				D0912D012167F21100ABAB7F /* CustomTextField.swift */,
+				D0912D022167F21100ABAB7F /* CustomTextField.xib */,
+				D0912D002167F21000ABAB7F /* CustomTextFieldWithImage.swift */,
+				D0912CFF2167F21000ABAB7F /* CustomTextFieldWithImage.xib */,
+			);
+			path = SharedViews;
+			sourceTree = "<group>";
+		};
+		D0912D0B2167F4D100ABAB7F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D102167F4F200ABAB7F /* geometria_bold_italic.otf */,
+				D0912D0C2167F4F200ABAB7F /* geometria_bold.otf */,
+				D0912D0D2167F4F200ABAB7F /* geometria_exta_black.otf */,
+				D0912D112167F4F200ABAB7F /* geometria_extra_black_italic.otf */,
+				D0912D0E2167F4F200ABAB7F /* geometria_extra_light_italic.otf */,
+				D0912D132167F4F300ABAB7F /* geometria_extra_light.otf */,
+				D0912D0F2167F4F200ABAB7F /* geometria_heavy_italic.otf */,
+				D0912D152167F4F300ABAB7F /* geometria_heavy.otf */,
+				D0912D142167F4F300ABAB7F /* geometria_light.otf */,
+				D0912D122167F4F300ABAB7F /* geometria_medium.otf */,
+				D0912D162167F4F300ABAB7F /* geometria_normal.otf */,
+				D0912D172167F4F300ABAB7F /* myriad_pro_regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D0912D24216890B300ABAB7F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D25216890B300ABAB7F /* Implementation */,
+				D0912D27216890B300ABAB7F /* Protocols */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D0912D25216890B300ABAB7F /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D26216890B300ABAB7F /* AuthFacadeServiceImp.swift */,
+				D0912D512168CB0800ABAB7F /* ContractSerivceImp.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		D0912D27216890B300ABAB7F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D28216890B300ABAB7F /* AuthFacadeService.swift */,
+				D0912D4F2168C85800ABAB7F /* ContractService.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D0912D2B216890F300ABAB7F /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D2D216890F300ABAB7F /* ECHOKeysCoreComponentImp.swift */,
+				D0912D2C216890F300ABAB7F /* SharedSorage.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		D0912D2F216890F300ABAB7F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D30216890F300ABAB7F /* Implementation */,
+				D0912D33216890F300ABAB7F /* Protocols */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D0912D30216890F300ABAB7F /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D31216890F300ABAB7F /* FaucetNetworkImp.swift */,
+				D0912D32216890F300ABAB7F /* StorageCore.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		D0912D33216890F300ABAB7F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D34216890F300ABAB7F /* NetworkProviderImp.swift */,
+				D0912D35216890F300ABAB7F /* FaucetNetworkCore.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D0912D36216890F400ABAB7F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D37216890F400ABAB7F /* ECHOKeysCoreComponent.swift */,
+				D0912D39216890F400ABAB7F /* KeyValueSorage.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D0912D44216891DC00ABAB7F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D45216891DC00ABAB7F /* Clearable.swift */,
+			);
+			name = Protocols;
+			path = ../../../../../Echo_duels_v2/Duels/Classes/BuisnessLayer/Protocols;
+			sourceTree = "<group>";
+		};
+		D0912D47216891F100ABAB7F /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D48216891F100ABAB7F /* DoorsError.swift */,
+				D0912D49216891F100ABAB7F /* ErrorWrapper.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		D0912D4C2168A13B00ABAB7F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D4D2168A15200ABAB7F /* LoaderExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D0B7277C2167E41C00994782 /* DoorChain */ = {
+			isa = PBXGroup;
+			children = (
+				D0B7277D2167E41C00994782 /* Classes */,
+				D0B727B22167E41C00994782 /* Other */,
+				D0B727B82167E41C00994782 /* Common */,
+			);
+			path = DoorChain;
+			sourceTree = SOURCE_ROOT;
+		};
+		D0B7277D2167E41C00994782 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727942167E41C00994782 /* PresentationLayer */,
+				D0B7277E2167E41C00994782 /* BuisnessLayer */,
+				D0B7278C2167E41C00994782 /* ApplicationLayer */,
+				D0B727932167E41C00994782 /* AppDelegate.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D0B7277E2167E41C00994782 /* BuisnessLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D24216890B300ABAB7F /* Services */,
+				D0B7277F2167E41C00994782 /* Core */,
+				D0B727872167E41C00994782 /* Assembler */,
+			);
+			path = BuisnessLayer;
+			sourceTree = "<group>";
+		};
+		D0B7277F2167E41C00994782 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D47216891F100ABAB7F /* Errors */,
+				D0912D44216891DC00ABAB7F /* Protocols */,
+				D0912D2B216890F300ABAB7F /* Implementation */,
+				D0912D2F216890F300ABAB7F /* Network */,
+				D0912D36216890F400ABAB7F /* Protocols */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D0B727872167E41C00994782 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727882167E41C00994782 /* ServicesAssembly.swift */,
+				D0B727892167E41C00994782 /* CoreComponentAssembly.swift */,
+				D0B7278A2167E41C00994782 /* ProxyAssembly.swift */,
+				D0B7278B2167E41C00994782 /* BusinessLayerAssembly.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		D0B7278C2167E41C00994782 /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D0B7278D2167E41C00994782 /* Configurators */,
+				D0B727912167E41C00994782 /* Assembler */,
+			);
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		D0B7278D2167E41C00994782 /* Configurators */ = {
+			isa = PBXGroup;
+			children = (
+				D0B7278E2167E41C00994782 /* ConfiguratorProtocol.swift */,
+				D0B7278F2167E41C00994782 /* ApplicationConfigurator.swift */,
+				D0B727902167E41C00994782 /* AppearanceConfigurator.swift */,
+			);
+			path = Configurators;
+			sourceTree = "<group>";
+		};
+		D0B727912167E41C00994782 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727922167E41C00994782 /* ApplicationAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		D0B727942167E41C00994782 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727972167E41C00994782 /* LaunchScreen.storyboard */,
+				D0B727952167E41C00994782 /* Assembler */,
+				D0B727992167E41C00994782 /* Modules */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		D0B727952167E41C00994782 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727962167E41C00994782 /* ModuleAssembly.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		D0B727992167E41C00994782 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D0912CFB2167EB2F00ABAB7F /* Auth */,
+				D0B727A22167E41C00994782 /* Root */,
+				247F7ACA16ACF45E1C56485E /* Doors */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D0B727A22167E41C00994782 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727A72167E41C00994782 /* Root.storyboard */,
+				D0B727A32167E41C00994782 /* Assembly */,
+				D0B727A52167E41C00994782 /* Presenter */,
+				D0B727A82167E41C00994782 /* View */,
+				D0B727AA2167E41C00994782 /* Configurator */,
+				D0B727AC2167E41C00994782 /* Protocols */,
+				D0B727AE2167E41C00994782 /* Interactor */,
+				D0B727B02167E41C00994782 /* Router */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		D0B727A32167E41C00994782 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727A42167E41C00994782 /* RootAssembler.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		D0B727A52167E41C00994782 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727A62167E41C00994782 /* RootPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D0B727A82167E41C00994782 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727A92167E41C00994782 /* RootViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0B727AA2167E41C00994782 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727AB2167E41C00994782 /* RootConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D0B727AC2167E41C00994782 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727AD2167E41C00994782 /* RootProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D0B727AE2167E41C00994782 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727AF2167E41C00994782 /* RootInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D0B727B02167E41C00994782 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727B12167E41C00994782 /* RootRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D0B727B22167E41C00994782 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D4C2168A13B00ABAB7F /* Extensions */,
+				D0912CFE2167F1E700ABAB7F /* SharedViews */,
+				D0B727B42167E41C00994782 /* Resources */,
+				D0B727B32167E41C00994782 /* Localization.strings */,
+				D0B727B62167E41C00994782 /* R.generated.swift */,
+				D0B727B72167E41C00994782 /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		D0B727B42167E41C00994782 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727B52167E41C00994782 /* Assets.xcassets */,
+				D0912D0B2167F4D100ABAB7F /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D0B727B82167E41C00994782 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D0912D092167F41600ABAB7F /* DoorChain.clr */,
+				D0B727B92167E41C00994782 /* Constants.swift */,
+				D0B727BA2167E41C00994782 /* Protocols */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D0B727BA2167E41C00994782 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D0B727BB2167E41C00994782 /* Presentable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D98778A250A9AAFB04380903 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABBD4AA95ED1DBE9B9B59701 /* Pods-DoorChain.debug.xcconfig */,
+				D23C5AE6C3E3628E67B73B24 /* Pods-DoorChain.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED448652D1A8E8E4FE088BAB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BB36E0AF7049ACC1DA7B3E0B /* RegistrationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F0A75C1A3D23D251C9E38CBD /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				86A98A3EE9647352A80C8CD4 /* View */,
+				8E9956D5F410AE338110413C /* Presenter */,
+				6BC8DA2739181193CFAC6435 /* Interactor */,
+				ED448652D1A8E8E4FE088BAB /* Router */,
+				FCCB665A6C5698EE3ED00B48 /* Configurator */,
+				C99E6694B720BA1BCC2E3A06 /* Assembly */,
+				085E48373E27C393F5AB39E7 /* Protocols */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		FCCB665A6C5698EE3ED00B48 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				484D1291B75D9009E7DA9084 /* RegistrationConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B3D1C20A2137F412009018AE /* DoorChain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3D1C21D2137F414009018AE /* Build configuration list for PBXNativeTarget "DoorChain" */;
+			buildPhases = (
+				64737C69D6B335E6C4B52569 /* [CP] Check Pods Manifest.lock */,
+				B3D1C2072137F412009018AE /* Sources */,
+				B3D1C2082137F412009018AE /* Frameworks */,
+				B3D1C2092137F412009018AE /* Resources */,
+				B3D1C8F92137FABD009018AE /* ShellScript */,
+				B3D1C8FA2137FACF009018AE /* ShellScript */,
+				53E6C2EE4AE8A21BC3579758 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoorChain;
+			productName = FitApp;
+			productReference = B3D1C20B2137F412009018AE /* DoorChain.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3D1C2032137F412009018AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = PixelPlex;
+				TargetAttributes = {
+					B3D1C20A2137F412009018AE = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B3D1C2062137F412009018AE /* Build configuration list for PBXProject "DoorChain" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B3D1C2022137F412009018AE;
+			productRefGroup = B3D1C20C2137F412009018AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3D1C20A2137F412009018AE /* DoorChain */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3D1C2092137F412009018AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0912D0A2167F41600ABAB7F /* DoorChain.clr in Resources */,
+				D0912D1A2167F56E00ABAB7F /* geometria_exta_black.otf in Resources */,
+				D0B727CC2167E41C00994782 /* Root.storyboard in Resources */,
+				D0912D1F2167F56E00ABAB7F /* geometria_heavy.otf in Resources */,
+				D0912D5421694C0700ABAB7F /* Doors.storyboard in Resources */,
+				D0912D1D2167F56E00ABAB7F /* geometria_extra_light.otf in Resources */,
+				D0912D202167F56E00ABAB7F /* geometria_light.otf in Resources */,
+				D0B727D22167E41C00994782 /* Localization.strings in Resources */,
+				D0912D1B2167F56E00ABAB7F /* geometria_extra_black_italic.otf in Resources */,
+				D0912D232167F56E00ABAB7F /* myriad_pro_regular.otf in Resources */,
+				D0912D1E2167F56E00ABAB7F /* geometria_heavy_italic.otf in Resources */,
+				D0912D032167F21100ABAB7F /* CustomTextFieldWithImage.xib in Resources */,
+				D0912D1C2167F56E00ABAB7F /* geometria_extra_light_italic.otf in Resources */,
+				D0912CFD2167EB4300ABAB7F /* Auth.storyboard in Resources */,
+				D0912D212167F56E00ABAB7F /* geometria_medium.otf in Resources */,
+				D0912D062167F21100ABAB7F /* CustomTextField.xib in Resources */,
+				D0912D192167F56E00ABAB7F /* geometria_bold.otf in Resources */,
+				D0B727C92167E41C00994782 /* LaunchScreen.storyboard in Resources */,
+				D0912D182167F56E00ABAB7F /* geometria_bold_italic.otf in Resources */,
+				D0B727D32167E41C00994782 /* Assets.xcassets in Resources */,
+				D0912D222167F56E00ABAB7F /* geometria_normal.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53E6C2EE4AE8A21BC3579758 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DoorChain/Pods-DoorChain-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ECHO/ECHO.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ECHO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoorChain/Pods-DoorChain-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64737C69D6B335E6C4B52569 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DoorChain-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3D1C8F92137FABD009018AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/DoorChain/Other\"\n";
+		};
+		B3D1C8FA2137FACF009018AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\nexit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3D1C2072137F412009018AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0912D41216890F400ABAB7F /* ECHOKeysCoreComponent.swift in Sources */,
+				D0912D43216890F400ABAB7F /* KeyValueSorage.swift in Sources */,
+				D0B727C82167E41C00994782 /* ModuleAssembly.swift in Sources */,
+				D0B727C52167E41C00994782 /* AppearanceConfigurator.swift in Sources */,
+				D0B727D72167E41C00994782 /* Presentable.swift in Sources */,
+				D0B727CE2167E41C00994782 /* RootConfigurator.swift in Sources */,
+				D0B727D12167E41C00994782 /* RootRouter.swift in Sources */,
+				D0B727C62167E41C00994782 /* ApplicationAssembler.swift in Sources */,
+				D0B727C02167E41C00994782 /* CoreComponentAssembly.swift in Sources */,
+				D0B727C12167E41C00994782 /* ProxyAssembly.swift in Sources */,
+				D0B727C32167E41C00994782 /* ConfiguratorProtocol.swift in Sources */,
+				D0B727CD2167E41C00994782 /* RootViewController.swift in Sources */,
+				D0912D042167F21100ABAB7F /* CustomTextFieldWithImage.swift in Sources */,
+				D0B727CB2167E41C00994782 /* RootPresenter.swift in Sources */,
+				D0912D46216891DC00ABAB7F /* Clearable.swift in Sources */,
+				D0912D29216890B300ABAB7F /* AuthFacadeServiceImp.swift in Sources */,
+				D0912D3A216890F400ABAB7F /* SharedSorage.swift in Sources */,
+				D0912D40216890F400ABAB7F /* FaucetNetworkCore.swift in Sources */,
+				D0912D4A216891F100ABAB7F /* DoorsError.swift in Sources */,
+				D0B727C72167E41C00994782 /* AppDelegate.swift in Sources */,
+				D0912D3E216890F400ABAB7F /* StorageCore.swift in Sources */,
+				D0912D3D216890F400ABAB7F /* FaucetNetworkImp.swift in Sources */,
+				D0B727CA2167E41C00994782 /* RootAssembler.swift in Sources */,
+				D0B727D42167E41C00994782 /* R.generated.swift in Sources */,
+				D0B727D02167E41C00994782 /* RootInteractor.swift in Sources */,
+				D0B727CF2167E41C00994782 /* RootProtocols.swift in Sources */,
+				D0B727D62167E41C00994782 /* Constants.swift in Sources */,
+				D0912D052167F21100ABAB7F /* CustomTextField.swift in Sources */,
+				D0B727BF2167E41C00994782 /* ServicesAssembly.swift in Sources */,
+				D0B727C22167E41C00994782 /* BusinessLayerAssembly.swift in Sources */,
+				D0B727C42167E41C00994782 /* ApplicationConfigurator.swift in Sources */,
+				5518265CAB0E2520F2ECD18D /* LoginViewController.swift in Sources */,
+				D0912D082167F36800ABAB7F /* ErrorableView.swift in Sources */,
+				42A0E51A7228374483D8E3AA /* LoginPresenter.swift in Sources */,
+				D0912D3B216890F400ABAB7F /* ECHOKeysCoreComponentImp.swift in Sources */,
+				D0912D4E2168A15200ABAB7F /* LoaderExtension.swift in Sources */,
+				D0912D4B216891F100ABAB7F /* ErrorWrapper.swift in Sources */,
+				D0912D2A216890B300ABAB7F /* AuthFacadeService.swift in Sources */,
+				ACD1C23A645C0C12E390CAD9 /* LoginInteractor.swift in Sources */,
+				463B456709A2E73EF3C4DC9D /* LoginRouter.swift in Sources */,
+				87684323322436EB8E6ADDAD /* LoginConfigurator.swift in Sources */,
+				B10CCC6E52D5E2ACAA7255D2 /* LoginAssembler.swift in Sources */,
+				DBE0FA80150705A8820C71CA /* LoginProtocols.swift in Sources */,
+				824071586828B9BA4148CBFA /* RegistrationViewController.swift in Sources */,
+				1EDD03FC1CAFED42130DDDBC /* RegistrationPresenter.swift in Sources */,
+				EFC7509CD7B2F57BFB016AB5 /* RegistrationInteractor.swift in Sources */,
+				06B12EF9E56E0ED89819E13A /* RegistrationRouter.swift in Sources */,
+				D0912D502168C85800ABAB7F /* ContractService.swift in Sources */,
+				6C2D681C48EEF9060DCFAC48 /* RegistrationConfigurator.swift in Sources */,
+				9D20E9A1109B2E51A719B9CF /* RegistrationAssembler.swift in Sources */,
+				D0912D3F216890F400ABAB7F /* NetworkProviderImp.swift in Sources */,
+				D0912D522168CB0800ABAB7F /* ContractSerivceImp.swift in Sources */,
+				D41535A9B834E44058886E0A /* RegistrationProtocols.swift in Sources */,
+				79BE3382ADA3470C05EEB31A /* DoorsViewController.swift in Sources */,
+				526B8DEDBBE4B415CCB3597F /* DoorsPresenter.swift in Sources */,
+				C272DE6EAF2CF2C1531357CE /* DoorsInteractor.swift in Sources */,
+				D0912D562169593E00ABAB7F /* DoorsTableViewCell.swift in Sources */,
+				838F1B41BDA5AEA06AD5A613 /* DoorsRouter.swift in Sources */,
+				3CBA647FB66D54F3FB0B94BA /* DoorsConfigurator.swift in Sources */,
+				0C2258DC2728CAA290CBF0A6 /* DoorsAssembler.swift in Sources */,
+				91E55BAF0E9DA986F13F0F6E /* DoorsProtocols.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D0B727972167E41C00994782 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0B727982167E41C00994782 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B3D1C21B2137F414009018AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B3D1C21C2137F414009018AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3D1C21E2137F414009018AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABBD4AA95ED1DBE9B9B59701 /* Pods-DoorChain.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q7Q43CUMWT;
+				INFOPLIST_FILE = "$(SRCROOT)/DoorChain/Other/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pixelplex.DoorChain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3D1C21F2137F414009018AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D23C5AE6C3E3628E67B73B24 /* Pods-DoorChain.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q7Q43CUMWT;
+				INFOPLIST_FILE = "$(SRCROOT)/DoorChain/Other/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pixelplex.DoorChain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3D1C2062137F412009018AE /* Build configuration list for PBXProject "DoorChain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3D1C21B2137F414009018AE /* Debug */,
+				B3D1C21C2137F414009018AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3D1C21D2137F414009018AE /* Build configuration list for PBXNativeTarget "DoorChain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3D1C21E2137F414009018AE /* Debug */,
+				B3D1C21F2137F414009018AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3D1C2032137F412009018AE /* Project object */;
+}

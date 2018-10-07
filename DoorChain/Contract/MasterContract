@@ -1,0 +1,219 @@
+pragma solidity ^0.4.24;
+
+contract DorchainMasterContract {
+    
+    struct Door {
+        int64 identifier;
+        string name;
+        
+        address[] whiteList;
+    }
+    
+    address owner;
+    
+    int256 public doorsCount;
+    int64[] private doorsIds;
+    Door[] private doors;
+    
+    constructor () public {
+       owner = msg.sender;
+       doorsCount = 0;
+    }
+    
+    function getDoorsCount() public constant returns (int256 result) {
+        return doorsCount;
+    }
+    
+    // Owner
+    
+    function changeOwner(address newOwner) public returns (bool result) {
+        if (msg.sender != owner) {  return false; }
+        
+        owner = newOwner;
+        return true; 
+    }
+    
+    
+    function isOwner() public constant returns (bool result) {
+        result = owner == msg.sender;
+    }
+    
+    // Doors
+    
+    function addDoor(int64 doorId, string doorName) public returns (bool result) {
+        if (msg.sender != owner) {  return false; }
+        
+        Door memory door;
+        door.identifier = doorId;
+        door.name = doorName;
+        
+        doors.push(door);
+        doorsIds.push(doorId);
+        doorsCount++;
+        
+        return true;
+    }
+    
+    function removeDoor(int64 doorId) public returns (bool result) {
+        if (msg.sender != owner) {  return false; }
+        
+        for (uint i = 0; i<doorsIds.length; i++) {
+            int64 findedId = doorsIds[i];
+            if (findedId == doorId) {
+                bool deletedDoor = deleteDoor(i);
+                bool deletedDoorId = deleteDoorId(i);
+                doorsCount--;
+                return (deletedDoor && deletedDoorId);
+            }
+        }
+        return false;
+    }
+    
+    function getDoorInfoByIdentifier(int64 doorId) public constant returns (int64 identifier, string name) {
+        
+        for (uint i = 0; i<doorsIds.length; i++) {
+            int64 findedId = doorsIds[i];
+            if (findedId == doorId) {
+                Door storage findedDoor = doors[i];
+                return (findedDoor.identifier, findedDoor.name);
+            }
+        }
+        throw;
+    }
+    
+    function getDoorInfoByIndex(uint doorIndex) public constant returns (int64 identifier, string name) {
+        
+        Door storage door = doors[doorIndex];
+        return (door.identifier, door.name);
+    }
+    
+    // Users
+    
+    event DoorOpened(int64 doorId);
+    
+    function openDoor(int64 doorId) public returns (bool result) {
+        if (msg.sender == owner) {  
+            DoorOpened(doorId);
+            return true; 
+        }
+        
+        for (uint i = 0; i<doorsIds.length; i++) {
+            int64 findedId = doorsIds[i];
+            if (findedId == doorId) {
+                Door storage findedDoor = doors[i];
+                bool isOpened = isInWhiteList(findedDoor.whiteList, msg.sender);
+                if (isOpened == true) {
+                    DoorOpened(doorId);
+                }
+                return isOpened;
+            }
+        }
+        return false;
+    }
+    
+    function addUserToDoor(int64 doorId, address userAddress) public returns (bool result) {
+        if (msg.sender != owner) {  return false; }
+        
+        for (uint i = 0; i<doorsIds.length; i++) {
+            int64 findedId = doorsIds[i];
+            if (findedId == doorId) {
+                Door storage findedDoor = doors[i];
+                if (isInWhiteList(findedDoor.whiteList, userAddress) == true) {
+                    return false;
+                }
+                findedDoor.whiteList.push(userAddress);
+                doors[i] = findedDoor;
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    function removeUserFromDoor(int64 doorId, address userAddress) public returns (bool result) {
+        if (msg.sender != owner) {  return false; }
+        
+        for (uint i = 0; i<doorsIds.length; i++) {
+            int64 findedId = doorsIds[i];
+            if (findedId == doorId) {
+                Door storage findedDoor = doors[i];
+                address[] storage whiteList = findedDoor.whiteList;
+                var newWhiteList = removeUserFromDoorArray(whiteList, userAddress);
+                findedDoor.whiteList = newWhiteList;
+                doors[i] = findedDoor;
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    function removeUserFromDoorArray(address[] storage whiteList, address userAddress) private returns (address[] newWhiteList) {
+        
+        for (uint i = 0; i<whiteList.length; i++) {
+            address findedAddress = whiteList[i];
+            if (findedAddress == userAddress) {
+                for (uint j = i; j<whiteList.length-1; j++) {
+                    whiteList[j] = whiteList[i+1];
+                }
+                whiteList.length--;
+                return whiteList;
+            }
+        }
+        
+        return whiteList;
+    }
+    
+    function getDoorWhiteList(int64 doorId) public constant returns (address[] result) {
+        
+        for (uint i = 0; i<doorsIds.length; i++) {
+            int64 findedId = doorsIds[i];
+            if (findedId == doorId) {
+                Door storage findedDoor = doors[i];
+                return findedDoor.whiteList;
+            }
+        }
+        throw;
+    }
+    
+    
+    function isInWhiteList(address[] whiteList, address userAddress) private constant returns (bool result) {
+        for (uint i = 0; i<whiteList.length; i++) {
+            address findedAddress = whiteList[i];
+            if (findedAddress == userAddress) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    // Delete
+    
+    function deleteDoorId(uint index) private returns (bool result) {
+        if (index >= doorsIds.length) return false;
+
+        for (uint i = index; i<doorsIds.length-1; i++) {
+            doorsIds[i] = doorsIds[i+1];
+        }
+        doorsIds.length--;
+        return true;
+    }
+    
+    function deleteDoor(uint index) private returns (bool result) {
+        if (index >= doors.length) return false;
+
+        for (uint i = index; i<doors.length-1; i++) {
+            doors[i] = doors[i+1];
+        }
+        doors.length--;
+        return true;
+    }
+    
+    function deleteUserFromDoor(uint index) private returns (bool result) {
+        if (index >= doors.length) return false;
+
+        for (uint i = index; i<doors.length-1; i++) {
+            doors[i] = doors[i+1];
+        }
+        doors.length--;
+        return true;
+    }
+}

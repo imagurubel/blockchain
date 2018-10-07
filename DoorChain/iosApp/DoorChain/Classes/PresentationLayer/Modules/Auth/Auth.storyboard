@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="geometria_medium.otf">
+            <string>Geometria-Medium</string>
+        </array>
+        <array key="geometria_normal.otf">
+            <string>Geometria</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Registration View Controller-->
+        <scene sceneID="oGR-ud-ozf">
+            <objects>
+                <viewController storyboardIdentifier="RegistrationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XQj-Gv-jfj" customClass="RegistrationViewController" customModule="DoorChain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qgu-ER-mkL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQs-Ii-FIW">
+                                <rect key="frame" x="164.5" y="83" width="46.5" height="17"/>
+                                <fontDescription key="fontDescription" name="Geometria-Medium" family="Geometria" pointSize="17"/>
+                                <color key="textColor" red="0.20784313730000001" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWw-hM-gtp">
+                                <rect key="frame" x="28" y="101" width="319" height="14"/>
+                                <fontDescription key="fontDescription" name="Geometria" family="Geometria" pointSize="14"/>
+                                <color key="textColor" red="0.92156862750000001" green="0.29411764709999999" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sek-TX-HXc">
+                                <rect key="frame" x="28" y="124" width="319" height="45"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="YVX-GT-gdn"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q93-ds-smw">
+                                <rect key="frame" x="28" y="250" width="319" height="45"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="BzT-EI-GOP"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJ4-9j-ZFT">
+                                <rect key="frame" x="28" y="315" width="319" height="40"/>
+                                <color key="backgroundColor" red="0.31372549020000001" green="0.52941176469999995" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sqt-zD-3z3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geometria-Medium" family="Geometria" pointSize="17"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registrationAction:" destination="XQj-Gv-jfj" eventType="touchUpInside" id="hFb-PY-523"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3A-pI-Gwf">
+                                <rect key="frame" x="142" y="397" width="91" height="26"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfY-n5-hCq">
+                                        <rect key="frame" x="0.0" y="6" width="38" height="14"/>
+                                        <fontDescription key="fontDescription" name="Geometria" family="Geometria" pointSize="14"/>
+                                        <color key="textColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP0-Fm-Aqu">
+                                        <rect key="frame" x="42" y="0.0" width="49" height="26"/>
+                                        <fontDescription key="fontDescription" name="Geometria-Medium" family="Geometria" pointSize="14"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="loginAction:" destination="XQj-Gv-jfj" eventType="touchUpInside" id="P2I-AT-heZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fP0-Fm-Aqu" secondAttribute="trailing" id="BfZ-W1-4CZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="fP0-Fm-Aqu" secondAttribute="bottom" id="FdC-i5-0PU"/>
+                                    <constraint firstItem="fP0-Fm-Aqu" firstAttribute="leading" secondItem="RfY-n5-hCq" secondAttribute="trailing" constant="4" id="SlG-rc-3Pb"/>
+                                    <constraint firstItem="RfY-n5-hCq" firstAttribute="centerY" secondItem="fP0-Fm-Aqu" secondAttribute="centerY" id="ge5-6Y-gDF"/>
+                                    <constraint firstItem="fP0-Fm-Aqu" firstAttribute="top" secondItem="j3A-pI-Gwf" secondAttribute="top" id="kIG-Tw-q4b"/>
+                                    <constraint firstItem="RfY-n5-hCq" firstAttribute="leading" secondItem="j3A-pI-Gwf" secondAttribute="leading" id="m3E-Hl-oC7"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMj-wY-rYL">
+                                <rect key="frame" x="28" y="187" width="319" height="45"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="2rL-ob-53v"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.95999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="fT9-rq-us4" firstAttribute="trailing" secondItem="q93-ds-smw" secondAttribute="trailing" constant="28" id="35J-Vv-jDh"/>
+                            <constraint firstItem="fT9-rq-us4" firstAttribute="trailing" secondItem="NJ4-9j-ZFT" secondAttribute="trailing" constant="28" id="7xk-fy-UOK"/>
+                            <constraint firstItem="WQs-Ii-FIW" firstAttribute="top" secondItem="fT9-rq-us4" secondAttribute="top" constant="63" id="87S-AJ-JtD"/>
+                            <constraint firstItem="fT9-rq-us4" firstAttribute="trailing" secondItem="lMj-wY-rYL" secondAttribute="trailing" constant="28" id="B4W-Tf-Wqi"/>
+                            <constraint firstItem="lMj-wY-rYL" firstAttribute="top" secondItem="sek-TX-HXc" secondAttribute="bottom" constant="18" id="Csi-jJ-sz5"/>
+                            <constraint firstItem="fT9-rq-us4" firstAttribute="trailing" secondItem="sek-TX-HXc" secondAttribute="trailing" constant="28" id="ICF-4p-5lV"/>
+                            <constraint firstItem="j3A-pI-Gwf" firstAttribute="top" secondItem="NJ4-9j-ZFT" secondAttribute="bottom" constant="42" id="Icf-C0-Y1h"/>
+                            <constraint firstItem="RWw-hM-gtp" firstAttribute="top" secondItem="WQs-Ii-FIW" secondAttribute="bottom" constant="1" id="Jco-zM-gAK"/>
+                            <constraint firstItem="q93-ds-smw" firstAttribute="top" secondItem="lMj-wY-rYL" secondAttribute="bottom" constant="18" id="K3A-DX-dBg"/>
+                            <constraint firstItem="fT9-rq-us4" firstAttribute="trailing" secondItem="RWw-hM-gtp" secondAttribute="trailing" constant="28" id="LXc-Bo-waC"/>
+                            <constraint firstItem="NJ4-9j-ZFT" firstAttribute="top" secondItem="q93-ds-smw" secondAttribute="bottom" constant="20" id="Nsm-r7-FZi"/>
+                            <constraint firstItem="RWw-hM-gtp" firstAttribute="leading" secondItem="fT9-rq-us4" secondAttribute="leading" constant="28" id="TlX-D3-pFX"/>
+                            <constraint firstItem="sek-TX-HXc" firstAttribute="leading" secondItem="fT9-rq-us4" secondAttribute="leading" constant="28" id="Uhz-t3-otu"/>
+                            <constraint firstItem="WQs-Ii-FIW" firstAttribute="centerX" secondItem="Qgu-ER-mkL" secondAttribute="centerX" id="Uom-eA-1SY"/>
+                            <constraint firstItem="q93-ds-smw" firstAttribute="leading" secondItem="fT9-rq-us4" secondAttribute="leading" constant="28" id="Zre-3A-HAd"/>
+                            <constraint firstItem="j3A-pI-Gwf" firstAttribute="centerX" secondItem="Qgu-ER-mkL" secondAttribute="centerX" id="dQ8-AS-LkR"/>
+                            <constraint firstItem="NJ4-9j-ZFT" firstAttribute="leading" secondItem="fT9-rq-us4" secondAttribute="leading" constant="28" id="tL9-9N-sIW"/>
+                            <constraint firstItem="lMj-wY-rYL" firstAttribute="leading" secondItem="fT9-rq-us4" secondAttribute="leading" constant="28" id="wqM-Co-TYL"/>
+                            <constraint firstItem="sek-TX-HXc" firstAttribute="top" secondItem="RWw-hM-gtp" secondAttribute="bottom" constant="9" id="zDB-hj-u73"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fT9-rq-us4"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="a80-qj-cB7" appends="YES" id="GEB-Aa-uew"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="confirmpasswordContainer" destination="q93-ds-smw" id="m9d-vm-2Ho"/>
+                        <outlet property="emailContainer" destination="sek-TX-HXc" id="Lc2-Qu-nfd"/>
+                        <outlet property="errorLabel" destination="RWw-hM-gtp" id="746-OH-cSj"/>
+                        <outlet property="haveAccountLabel" destination="RfY-n5-hCq" id="Shx-Qu-dpT"/>
+                        <outlet property="loginButton" destination="fP0-Fm-Aqu" id="crP-DK-M9q"/>
+                        <outlet property="passwordContainer" destination="lMj-wY-rYL" id="nPW-Ta-UGO"/>
+                        <outlet property="registrationButton" destination="NJ4-9j-ZFT" id="6ac-RL-o5o"/>
+                        <outlet property="titleLabel" destination="WQs-Ii-FIW" id="SeK-da-zkZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ET-g7-xlA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="a80-qj-cB7">
+                    <connections>
+                        <action selector="actionTap:" destination="XQj-Gv-jfj" id="N4V-bp-B9P"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="562" y="191"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="kNc-Cd-wkD">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XHB-2F-7BT" customClass="LoginViewController" customModule="AlphaMarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XUg-Wc-dGt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZa-zs-cU6">
+                                <rect key="frame" x="164.5" y="83" width="46.5" height="17"/>
+                                <fontDescription key="fontDescription" name="Geometria-Medium" family="Geometria" pointSize="17"/>
+                                <color key="textColor" red="0.20784313730000001" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8U-lG-MXQ">
+                                <rect key="frame" x="28" y="101" width="319" height="14"/>
+                                <fontDescription key="fontDescription" name="Geometria" family="Geometria" pointSize="14"/>
+                                <color key="textColor" red="0.92156862750000001" green="0.29411764709999999" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6w-pe-zM1">
+                                <rect key="frame" x="28" y="124" width="319" height="45"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="awz-Sv-xM0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTL-dj-odp">
+                                <rect key="frame" x="28" y="187" width="319" height="45"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="8oF-D7-ld6"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yN-QU-qtv">
+                                <rect key="frame" x="28" y="252" width="319" height="40"/>
+                                <color key="backgroundColor" red="0.31372549020000001" green="0.52941176469999995" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pOB-dz-kP7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geometria-Medium" family="Geometria" pointSize="17"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginActions:" destination="XHB-2F-7BT" eventType="touchUpInside" id="Ia1-C5-rDA"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yhy-1U-Uxc">
+                                <rect key="frame" x="142" y="334" width="91" height="26"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvs-Ay-gPY">
+                                        <rect key="frame" x="0.0" y="6" width="38" height="14"/>
+                                        <fontDescription key="fontDescription" name="Geometria" family="Geometria" pointSize="14"/>
+                                        <color key="textColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcR-of-1Yo">
+                                        <rect key="frame" x="42" y="0.0" width="49" height="26"/>
+                                        <fontDescription key="fontDescription" name="Geometria-Medium" family="Geometria" pointSize="14"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="registrationAction:" destination="XHB-2F-7BT" eventType="touchUpInside" id="EY8-Eo-y3U"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TcR-of-1Yo" firstAttribute="top" secondItem="Yhy-1U-Uxc" secondAttribute="top" id="0Ja-6I-1Oq"/>
+                                    <constraint firstAttribute="trailing" secondItem="TcR-of-1Yo" secondAttribute="trailing" id="5D6-ZJ-Nag"/>
+                                    <constraint firstItem="TcR-of-1Yo" firstAttribute="leading" secondItem="Pvs-Ay-gPY" secondAttribute="trailing" constant="4" id="PLi-Vy-za4"/>
+                                    <constraint firstItem="Pvs-Ay-gPY" firstAttribute="centerY" secondItem="TcR-of-1Yo" secondAttribute="centerY" id="YSR-MM-uaJ"/>
+                                    <constraint firstItem="Pvs-Ay-gPY" firstAttribute="leading" secondItem="Yhy-1U-Uxc" secondAttribute="leading" id="itt-jj-uZg"/>
+                                    <constraint firstAttribute="bottom" secondItem="TcR-of-1Yo" secondAttribute="bottom" id="rCk-cZ-ch8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.95999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="vLz-lP-Saa" firstAttribute="trailing" secondItem="kTL-dj-odp" secondAttribute="trailing" constant="28" id="3i1-t5-VcN"/>
+                            <constraint firstItem="7yN-QU-qtv" firstAttribute="leading" secondItem="vLz-lP-Saa" secondAttribute="leading" constant="28" id="9gC-NA-HbL"/>
+                            <constraint firstItem="c8U-lG-MXQ" firstAttribute="leading" secondItem="vLz-lP-Saa" secondAttribute="leading" constant="28" id="9uq-Md-Frm"/>
+                            <constraint firstItem="TZa-zs-cU6" firstAttribute="top" secondItem="vLz-lP-Saa" secondAttribute="top" constant="63" id="CR0-ro-03T"/>
+                            <constraint firstItem="kTL-dj-odp" firstAttribute="top" secondItem="x6w-pe-zM1" secondAttribute="bottom" constant="18" id="Cth-Bs-wou"/>
+                            <constraint firstItem="vLz-lP-Saa" firstAttribute="trailing" secondItem="x6w-pe-zM1" secondAttribute="trailing" constant="28" id="Dhj-Wa-gmJ"/>
+                            <constraint firstItem="Yhy-1U-Uxc" firstAttribute="top" secondItem="7yN-QU-qtv" secondAttribute="bottom" constant="42" id="G2Z-id-1Dp"/>
+                            <constraint firstItem="7yN-QU-qtv" firstAttribute="top" secondItem="kTL-dj-odp" secondAttribute="bottom" constant="20" id="KVo-b6-EYW"/>
+                            <constraint firstItem="c8U-lG-MXQ" firstAttribute="top" secondItem="TZa-zs-cU6" secondAttribute="bottom" constant="1" id="M7V-jy-v1Q"/>
+                            <constraint firstItem="x6w-pe-zM1" firstAttribute="top" secondItem="c8U-lG-MXQ" secondAttribute="bottom" constant="9" id="MAD-fn-INe"/>
+                            <constraint firstItem="x6w-pe-zM1" firstAttribute="leading" secondItem="vLz-lP-Saa" secondAttribute="leading" constant="28" id="XdD-cf-C5h"/>
+                            <constraint firstItem="Yhy-1U-Uxc" firstAttribute="centerX" secondItem="XUg-Wc-dGt" secondAttribute="centerX" id="Ydl-ZA-rEX"/>
+                            <constraint firstItem="TZa-zs-cU6" firstAttribute="centerX" secondItem="XUg-Wc-dGt" secondAttribute="centerX" id="nqf-X0-IOb"/>
+                            <constraint firstItem="kTL-dj-odp" firstAttribute="leading" secondItem="vLz-lP-Saa" secondAttribute="leading" constant="28" id="nuw-eB-mJC"/>
+                            <constraint firstItem="vLz-lP-Saa" firstAttribute="trailing" secondItem="7yN-QU-qtv" secondAttribute="trailing" constant="28" id="vQQ-kj-sYp"/>
+                            <constraint firstItem="vLz-lP-Saa" firstAttribute="trailing" secondItem="c8U-lG-MXQ" secondAttribute="trailing" constant="28" id="xKU-Sr-2k7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vLz-lP-Saa"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="e8F-qA-0Qv" appends="YES" id="Iun-gj-9dt"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="emailContainer" destination="x6w-pe-zM1" id="j6y-EC-YJo"/>
+                        <outlet property="errorLabel" destination="c8U-lG-MXQ" id="YdD-pT-s0b"/>
+                        <outlet property="loginButton" destination="7yN-QU-qtv" id="gBW-cT-HyE"/>
+                        <outlet property="notHaveAccountLabel" destination="Pvs-Ay-gPY" id="N6h-8N-NUy"/>
+                        <outlet property="passwordContainer" destination="kTL-dj-odp" id="ghU-lW-y5E"/>
+                        <outlet property="registrationButton" destination="TcR-of-1Yo" id="vdc-JU-QG0"/>
+                        <outlet property="searchDisplayController" destination="Rtr-mn-UuL" id="YDd-2l-b7L"/>
+                        <outlet property="titleLabel" destination="TZa-zs-cU6" id="lro-cw-Sr4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8cW-ca-1ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Rtr-mn-UuL">
+                    <connections>
+                        <outlet property="delegate" destination="XHB-2F-7BT" id="yVI-01-TqB"/>
+                        <outlet property="searchContentsController" destination="XHB-2F-7BT" id="Vdf-mU-Faa"/>
+                        <outlet property="searchResultsDataSource" destination="XHB-2F-7BT" id="yF1-2j-1MF"/>
+                        <outlet property="searchResultsDelegate" destination="XHB-2F-7BT" id="ghY-Fl-DgH"/>
+                    </connections>
+                </searchDisplayController>
+                <tapGestureRecognizer id="e8F-qA-0Qv">
+                    <connections>
+                        <action selector="actionTap:" destination="XHB-2F-7BT" id="mSD-rF-VcT"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-140" y="191.1544227886057"/>
+        </scene>
+    </scenes>
+</document>
