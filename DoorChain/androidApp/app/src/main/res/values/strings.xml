@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Doorchain</string>
+
+    <!--auth screen starts-->
+    <string name="login">Login</string>
+    <string name="registration">Registration</string>
+    <string name="hint_login">Login</string>
+    <string name="hint_password">Password</string>
+    <string name="inter">Login</string>
+    <string name="auth_confirm">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="forgot_password">Forgot password?</string>
+
+    <string name="hint_repeat_password">Repeat password</string>
+    <string name="q_forgot_password">Forgot password?</string>
+    <string name="q_have_account">Already have account?</string>
+    <string name="q_have_not_account">Have no account?</string>
+    <string name="register">Register</string>
+    <string name="entire">Enter</string>
+    <!--auth screen ends-->
+
+    <!--Main-->
+    <string name="main_activity_title">Doors</string>
+    <string name="incorrect_door_parameters_text">Incorrect door parameters</string>
+    <string name="not_enough_rights_to_open_door">You has no rights to open the door</string>
+    <string name="opened_label">Opened</string>
+    <string name="unable_to_open_door">Unable to open the door</string>
+
+    <!--errors-->
+    <string name="error_input_login_and_pass">Enter email and password</string>
+    <string name="error_incorrect_login_and_pass">Wrong email or password</string>
+    <string name="error_user_with_such_name_exists">User with same email already registered</string>
+
+    <!--Add door-->
+    <string name="add_door_title">Add door</string>
+    <string name="add_door_action_label">Add</string>
+    <string name="add_door_name_hint_label">Name</string>
+    <string name="add_door_id_hint_label">Identifier</string>
+
+    <string name="add_user_title">Add user</string>
+    <string name="add_user_name_hint">User name or id</string>
+    <string name="empty_users">No users added yet</string>
+
+    <string name="connection_failure">Connection failure</string>
+    <string name="please_wait">Please, wait</string>
+    <string name="add_user_label">Add user</string>
+    <string name="apply_label">Apply</string>
+    <string name="door_should_be_added">Door should be added in a few seconds</string>
+    <string name="user_should_be_added_label">User should be added in a few seconds!</string>
+
+</resources>

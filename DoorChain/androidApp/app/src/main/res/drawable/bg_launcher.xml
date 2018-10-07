@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item >
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorWhite96Opacity"/>
+        </shape>
+    </item>
+
+    <item
+       android:top="150dp"
+        android:bottom="150dp"
+        android:left="100dp"
+        android:right="100dp"
+        android:drawable="@drawable/ic_door"/>
+
+
+
+</layer-list>

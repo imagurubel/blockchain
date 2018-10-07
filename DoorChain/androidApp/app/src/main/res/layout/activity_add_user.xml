@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lytRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:descendantFocusability="beforeDescendants"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/AuthTitleTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="@string/add_user_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvError"
+        style="@style/AuthErrorTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_incorrect_login_and_pass"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <View
+        android:id="@+id/vBgLogin"
+        style="@style/TextInputBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/etUserId"
+        app:layout_constraintEnd_toEndOf="@+id/etUserId"
+        app:layout_constraintStart_toStartOf="@+id/etUserId"
+        app:layout_constraintTop_toTopOf="@+id/etUserId" />
+
+    <EditText
+        android:id="@+id/etUserId"
+        style="@style/AuthTextInputStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:drawablePadding="9dp"
+        android:hint="@string/add_user_name_hint"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvAdd"
+        style="@style/PositiveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="@string/add_door_action_label"
+        app:layout_constraintEnd_toEndOf="@+id/etUserId"
+        app:layout_constraintStart_toStartOf="@+id/etUserId"
+        app:layout_constraintTop_toBottomOf="@+id/etUserId" />
+
+</android.support.constraint.ConstraintLayout>

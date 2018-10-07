@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="30dp">
+
+    <TextView
+        android:id="@+id/tvTitleDispute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/geometria_medium"
+        android:gravity="center"
+        android:text="@string/add_user_label"
+        android:textColor="@color/colorBlack90Opacity"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vBgLogin"
+        style="@style/TextInputBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/etLogin"
+        app:layout_constraintEnd_toEndOf="@+id/etLogin"
+        app:layout_constraintStart_toStartOf="@+id/etLogin"
+        app:layout_constraintTop_toTopOf="@+id/etLogin" />
+
+    <EditText
+        android:id="@+id/etLogin"
+        style="@style/AuthTextInputStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="@string/add_user_name_hint"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleDispute" />
+
+    <TextView
+        android:id="@+id/btnCancel"
+        style="@style/NegativeButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/cancel"
+        app:layout_constraintEnd_toEndOf="@id/etLogin"
+        app:layout_constraintStart_toStartOf="@id/etLogin"
+        app:layout_constraintTop_toBottomOf="@id/btnConfirm" />
+
+    <TextView
+        android:id="@+id/btnConfirm"
+        style="@style/PositiveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/apply_label"
+        app:layout_constraintEnd_toEndOf="@id/etLogin"
+        app:layout_constraintStart_toStartOf="@id/etLogin"
+        app:layout_constraintTop_toBottomOf="@id/etLogin" />
+
+</android.support.constraint.ConstraintLayout>
