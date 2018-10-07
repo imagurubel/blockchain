@@ -58,8 +58,8 @@ contract DorchainMasterContract {
         if (msg.sender != owner) {  return false; }
         
         for (uint i = 0; i<doorsIds.length; i++) {
-            int64 findedId = doorsIds[i];
-            if (findedId == doorId) {
+            int64 foundId = doorsIds[i];
+            if (foundId == doorId) {
                 bool deletedDoor = deleteDoor(i);
                 bool deletedDoorId = deleteDoorId(i);
                 doorsCount--;
@@ -72,10 +72,10 @@ contract DorchainMasterContract {
     function getDoorInfoByIdentifier(int64 doorId) public constant returns (int64 identifier, string name) {
         
         for (uint i = 0; i<doorsIds.length; i++) {
-            int64 findedId = doorsIds[i];
-            if (findedId == doorId) {
-                Door storage findedDoor = doors[i];
-                return (findedDoor.identifier, findedDoor.name);
+            int64 foundId = doorsIds[i];
+            if (foundId == doorId) {
+                Door storage foundDoor = doors[i];
+                return (foundDoor.identifier, foundDoor.name);
             }
         }
         throw;
@@ -98,10 +98,10 @@ contract DorchainMasterContract {
         }
         
         for (uint i = 0; i<doorsIds.length; i++) {
-            int64 findedId = doorsIds[i];
-            if (findedId == doorId) {
-                Door storage findedDoor = doors[i];
-                bool isOpened = isInWhiteList(findedDoor.whiteList, msg.sender);
+            int64 foundId = doorsIds[i];
+            if (foundId == doorId) {
+                Door storage foundDoor = doors[i];
+                bool isOpened = isInWhiteList(foundDoor.whiteList, msg.sender);
                 if (isOpened == true) {
                     DoorOpened(doorId);
                 }
@@ -115,14 +115,14 @@ contract DorchainMasterContract {
         if (msg.sender != owner) {  return false; }
         
         for (uint i = 0; i<doorsIds.length; i++) {
-            int64 findedId = doorsIds[i];
-            if (findedId == doorId) {
-                Door storage findedDoor = doors[i];
-                if (isInWhiteList(findedDoor.whiteList, userAddress) == true) {
+            int64 foundId = doorsIds[i];
+            if (foundId == doorId) {
+                Door storage foundDoor = doors[i];
+                if (isInWhiteList(foundDoor.whiteList, userAddress) == true) {
                     return false;
                 }
-                findedDoor.whiteList.push(userAddress);
-                doors[i] = findedDoor;
+                foundDoor.whiteList.push(userAddress);
+                doors[i] = foundDoor;
                 return true;
             }
         }
@@ -133,13 +133,13 @@ contract DorchainMasterContract {
         if (msg.sender != owner) {  return false; }
         
         for (uint i = 0; i<doorsIds.length; i++) {
-            int64 findedId = doorsIds[i];
-            if (findedId == doorId) {
-                Door storage findedDoor = doors[i];
-                address[] storage whiteList = findedDoor.whiteList;
+            int64 foundId = doorsIds[i];
+            if (foundId == doorId) {
+                Door storage foundDoor = doors[i];
+                address[] storage whiteList = foundDoor.whiteList;
                 var newWhiteList = removeUserFromDoorArray(whiteList, userAddress);
-                findedDoor.whiteList = newWhiteList;
-                doors[i] = findedDoor;
+                foundDoor.whiteList = newWhiteList;
+                doors[i] = foundDoor;
                 return true;
             }
         }
@@ -149,8 +149,8 @@ contract DorchainMasterContract {
     function removeUserFromDoorArray(address[] storage whiteList, address userAddress) private returns (address[] newWhiteList) {
         
         for (uint i = 0; i<whiteList.length; i++) {
-            address findedAddress = whiteList[i];
-            if (findedAddress == userAddress) {
+            address foundAddress = whiteList[i];
+            if (foundAddress == userAddress) {
                 for (uint j = i; j<whiteList.length-1; j++) {
                     whiteList[j] = whiteList[i+1];
                 }
@@ -165,10 +165,10 @@ contract DorchainMasterContract {
     function getDoorWhiteList(int64 doorId) public constant returns (address[] result) {
         
         for (uint i = 0; i<doorsIds.length; i++) {
-            int64 findedId = doorsIds[i];
-            if (findedId == doorId) {
-                Door storage findedDoor = doors[i];
-                return findedDoor.whiteList;
+            int64 foundId = doorsIds[i];
+            if (foundId == doorId) {
+                Door storage foundDoor = doors[i];
+                return foundDoor.whiteList;
             }
         }
         throw;
@@ -177,8 +177,8 @@ contract DorchainMasterContract {
     
     function isInWhiteList(address[] whiteList, address userAddress) private constant returns (bool result) {
         for (uint i = 0; i<whiteList.length; i++) {
-            address findedAddress = whiteList[i];
-            if (findedAddress == userAddress) {
+            address foundAddress = whiteList[i];
+            if (foundAddress == userAddress) {
                 return true;
             }
         }
