@@ -33,10 +33,15 @@ function submitMessage() {
   var text = document.getElementById('textinput').value;
   var userNum = text.split('').map(ascii);
   document.getElementById('divresult').innerHTML = 'sending message "'+text+'" ...<hr>'+document.getElementById('divresult').innerHTML;
+
+
   window.DApp.Game(1, userNum, DCLib.randomHash({bet:1, gamedata:userNum})).then(function(res) {
     console.log('callback')
 	console.log(res)
-	document.getElementById('divresult').innerHTML = 'sent message: "'+res.bankroller.result.result_word+'"<hr>'+document.getElementById('divresult').innerHTML;
+	var hashCheck = (res.bankroller.result.random_hash === res.local.result.random_hash) ? 'OK' : 'ERROR';
+	console.log(hashCheck)
+	var append = 'sent message: "' + res.bankroller.result.result_word + '". Message hash checked: ' + hashCheck + '<hr>';
+	document.getElementById('divresult').innerHTML = append + document.getElementById('divresult').innerHTML;
   })
 
 }
