@@ -6,7 +6,6 @@ import {
 	Switch,
 	TextInput,
 	StyleSheet,
-	ScrollView,
 	FlatList
 } from 'react-native';
 
@@ -20,7 +19,7 @@ import { connect } from 'react-redux';
 import web3, { contract } from '../../web3';
 import sha256 from 'sha256';
 import Hr from '../Hr';
-import { ADDRESSES, LANGUAGES, MIN_SERVICE_FEE } from '../../constants';
+import { ADDRESSES, MIN_SERVICE_FEE } from '../../constants';
 
 
 const inWei = (value)=>{
@@ -28,14 +27,9 @@ const inWei = (value)=>{
 }
 class PlaceOrder extends Component {
 	state = {
-		fromLangIndex: 0,
-		toLangIndex: 1,
-		fromLangEdit: false,
-		toLangEdit: false,
-		text: `Мы - команда!`,
 		address: '',
 		loading: false,
-		duration: '60',
+		taskId: '',
 		value: '1',
 		lastHash: ''
 	}
@@ -43,7 +37,7 @@ class PlaceOrder extends Component {
 	onChangeTerm(textValue){
 
 		this.setState({
-				duration: Number(textValue).toFixed(0)
+				taskId: textValue
 		});
 	}
 
@@ -60,24 +54,17 @@ class PlaceOrder extends Component {
 		});
 	}
 
-	onChangeText(text){
-		this.setState({
-			text: text
-		});
-	}
 
 	onSubmit(){
 		const { history, account, contractAddress, dispatch } = this.props;
-		const { text, address, duration, value } = this.state;
+		const { address, taskId, value } = this.state;
 
 		this.setState({
 			loading: true
 		}, ()=>{
 
-				let tx_builder = contract.methods.taskCreate(
-					Array.from(Buffer.from(sha256(text), 'hex')),
-					address,
-					duration
+				let tx_builder = contract.methods.taskConfirm(
+					Number(taskId)
 				);
 
 				let transactionObject = {
@@ -94,10 +81,9 @@ class PlaceOrder extends Component {
 					return web3.eth.sendSignedTransaction(signedTx.rawTransaction).once('transactionHash', (transactionHash)=>{
 						this.setState({
 								loading: false,
-								text: '',
 								value: '0',
 								address: '',
-								duration: '0',
+								taskId: '0',
 								lastHash: transactionHash
 							});
 						})
@@ -119,15 +105,12 @@ class PlaceOrder extends Component {
 
 	get formDisabled(){
 		const { contractAddress, account } = this.props;
-		const { fromLangIndex, toLangIndex, text, address, fromLangEdit, toLangEdit, loading, duration, value } = this.state;
+		const { fromLangIndex, toLangIndex, text, address, fromLangEdit, toLangEdit, loading, taskId, value } = this.state;
 
-		if (fromLangIndex == toLangIndex ||
-			text.length == 0 ||
-			!(Number(duration) > 0) ||
+		if ( taskId=='' ||
 			inWei(value) <= MIN_SERVICE_FEE ||
 			!account ||
 			address.length == 0 ||
-			fromLangEdit || toLangEdit ||
 			loading ||
 			!contractAddress
 		){
@@ -139,44 +122,31 @@ class PlaceOrder extends Component {
 	render(){
 
 
-		const { fromLangIndex, fromLangEdit, toLangIndex, toLangEdit, price, loading, text, duration, address, value, lastHash } = this.state;
+		const { fromLangIndex, fromLangEdit, toLangIndex, toLangEdit, price, loading, text, taskId, address, value, lastHash } = this.state;
 		const { account } = this.props;
 
 		return <Row style={styles.main}>
 
-			<View style={[styles.flex, styles.cell, {height: 410}]}>
-					<Header title={'Only 10 random translators'} />
-					{
-						ADDRESSES.filter((performer)=>!account || performer!=account.address)
-						.map( (performer, index)=><Cmd key={index} title={performer} onPress={()=>this.setState({ address: performer })} />)
+			<View style={[styles.flex, {height: 410}, styles.cell]}>
 
-					}
+					<Header title={'Select your new clients'} />
+					<FlatList
+						data={ADDRESSES.concat(ADDRESSES, ADDRESSES).reverse().filter((performer)=>!account || performer!=account.address)}
+						renderItem={({item, index})=>{
+							return <Cmd title={item} onPress={()=>this.setState({ address: item })} />
+						}}
+						keyExtractor={(item, index)=>String(index)}
+					/>
+
 			</View>
 			<View style={[styles.flex, styles.cell]}>
 
-					<Header title={'Choose your translator'} />
-
-					<Row style={styles.langView}>
-						{!fromLangEdit && <Cmd disabled={loading} title={LANGUAGES[fromLangIndex]} onPress={()=>this.setState({fromLangEdit: true})}/> || <Select
-							data={LANGUAGES}
-							selectedIndex={fromLangIndex}
-							onDone={(index)=>this.setState({fromLangEdit: false, fromLangIndex: index})}
-							onCancel={()=>this.setState({fromLangEdit: false})}
-						/>}
-						<Text> -> </Text>
-						{!toLangEdit && <Cmd disabled={loading} title={LANGUAGES[toLangIndex]} onPress={()=>this.setState({toLangEdit: true})}/> || <Select
-							data={LANGUAGES}
-							selectedIndex={toLangIndex}
-							onDone={(index)=>this.setState({toLangEdit: false, toLangIndex: index})}
-							onCancel={()=>this.setState({toLangEdit: false})}
-						/>}
-					</Row>
+					<Header title={'Confirm your new work'} />
 
 					<View style={styles.inputContainer}>
-		                <Text style={styles.text}>Performer address</Text>
+		                <Text style={styles.text}>Customer address</Text>
 		                <TextInput
 		                            style={[styles.input, loading && styles.inputLoading || styles.inputEditable]}
-		                            //multiline={true}
 		                            value={address}
 		                            returnKeyType={'done'}
 		                            editable={!loading}
@@ -190,11 +160,11 @@ class PlaceOrder extends Component {
 	                </View>
 
 	                <View style={styles.inputContainer}>
-		                <Text style={styles.text}>Time for translation</Text>
+		                <Text style={styles.text}>Task id</Text>
 		                <TextInput
 		                            style={[styles.input, loading && styles.inputLoading || styles.inputEditable]}
 		                            returnKeyType={'done'}
-		                            value={duration}
+		                            value={taskId}
 		                            editable={!loading}
 		                            autoCorrect={false}
 		                            autoCapitalize={'none'}
@@ -222,23 +192,6 @@ class PlaceOrder extends Component {
 	                </View>
 
 	                <View style={styles.inputContainer}>
-		                <Text style={styles.text}>Text to translate</Text>
-		                <TextInput
-		                            style={[styles.input, loading && styles.inputLoading || styles.inputEditable, {height: 50}]}
-		                            multiline={true}
-		                            value={text}
-		                            returnKeyType={'done'}
-		                            editable={!loading}
-		                            autoCorrect={false}
-		                            autoCapitalize={'none'}
-		                            placeholder={''}
-		                            keyboardType={'default'}
-		                            onChangeText={this.onChangeText.bind(this)}
-
-		                />
-	                </View>
-
-	                <View style={styles.inputContainer}>
 	                	{loading && <Indicator title={'loading...'} /> || <Button disabled={this.formDisabled} title="SEND TRANSACTION" onPress={this.onSubmit.bind(this)}/>}
 	                </View>
 
@@ -246,7 +199,8 @@ class PlaceOrder extends Component {
 	                	{lastHash}
 	                </Text>
 	            </View>
-            </Row>
+
+        </Row>
 	}
 }
 
@@ -265,16 +219,12 @@ const styles = StyleSheet.create({
 	langView: {
 		justifyContent: 'flex-start'
 	},
-	form: {
-		alignSelf: 'center',
-		borderColor: 'rgba(0, 0, 0, 0.1)',
-	},
     input: {
     	margin: 4,
     	borderWidth: 1,
     	borderColor: 'rgba(0, 0, 0, 0.1)',
     	height: 31,
-        width: 400,
+
         paddingLeft: 4,
         fontSize: 16,
         flex: 1,
@@ -296,7 +246,8 @@ const styles = StyleSheet.create({
     	marginRight: 4
     },
     inputContainer: {
-    	marginTop: 8
+    	marginTop: 8,
+    	width: 400
     }
 });
 const mapStateToProps = ({data, dispatch}) => {

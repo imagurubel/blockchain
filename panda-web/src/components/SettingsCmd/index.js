@@ -10,7 +10,7 @@ import Row from '../Row';
 import { connect } from 'react-redux';
 
 export const SettingsCmd = ({account, onPress})=>{
-	return <Button color={account && 'green' || null} title={account && account.address || 'SETTINGS'} onPress={onPress}/>
+	return <Button title={account && account.address || 'SETTINGS'} onPress={onPress}/>
 }
 
 function mapStateToProps({data, dispatch}) {

@@ -12,8 +12,7 @@ import NotFound from '../NotFound';
 import Row from '../Row';
 import PlaceOrder from '../PlaceOrder';
 
-import OrderConfirmation from '../OrderConfirmation';
-import MyOrders from '../MyOrders';
+import TaskConfirm from '../TaskConfirm';
 import Settings from '../Settings';
 import SettingsCmd from '../SettingsCmd';
 import { connect } from 'react-redux';
@@ -43,9 +42,8 @@ export default class Body extends Component {
 						<Row style={styles.links}>
 
 							<Go title={'Home'} to='/' />
-							<Go title={'My Orders'} to='/MyOrders' />
-							<Go title={'Place Order'} to='/PlaceOrder' />
-							<Go title={'Order Confirmation'} to='/OrderConfirmation' />
+							<Go title={'Task Create'} to='/PlaceOrder' />
+							<Go title={'Task Confirmation'} to='/TaskConfirm' />
 
 						</Row>
 						<Text numberOfLines={1} style={styles.headerText}>
@@ -57,8 +55,7 @@ export default class Body extends Component {
 						<Switch contextId="page">
 							<Route exact path='/' component={Home} />
 							<Route exact path='/PlaceOrder' component={PlaceOrder} />
-							<Route exact path='/OrderConfirmation' component={OrderConfirmation} />
-							<Route exact path='/MyOrders' component={MyOrders} />
+							<Route exact path='/TaskConfirm' component={TaskConfirm} />
 							<Route component={NotFound} />
 						</Switch>
 					</View>
