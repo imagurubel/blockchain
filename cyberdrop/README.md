@@ -5,5 +5,5 @@
 
 ## Airdrop visualizations
 
-### Dock.io airdrop
-![screenshot](dockdrop.png)
+### VinChain airdrop
+![screenshot](vinchain_airdrop.png)
